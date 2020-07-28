@@ -1,6 +1,18 @@
 /**
 * Sidebar
 */
+.main_header {
+	background-color: hsl(230, 100%, 20%);
+	color: white;
+	margin: 0;
+	padding: 0;
+	width: 200px;
+	position: fixed;
+	height: 100vh;
+	overflow-y: hidden;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+		0 1px 2px rgba(0, 0, 0, 0.24);
+}
 .sidebar__controls {
 	width: 100%;
 	margin: 50vh auto;
@@ -42,19 +54,19 @@
 	.main_header {
 		width: 100%;
 		height: 100px;
-		position: relative;
+		position: fixed;
 	}
-	.main_wrapper {
+	/* .main_wrapper {
 		margin-left: 0;
 		height: 100%;
 		padding: 10px;
-	}
+	} */
 
-	.list__container,
+	/* .list__container,
 	.list__results__container {
 		flex: 1;
 		padding: 10px;
-	}
+	} */
 
 	.sidebar__controls {
 		display: flex;

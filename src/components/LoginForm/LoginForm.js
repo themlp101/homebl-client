@@ -8,11 +8,10 @@ const LoginForm = () => {
 		user_name,
 		password,
 		error,
-		loggedIn,
 	} = useLogin()
+
 	return (
 		<div className='form__container'>
-			{loggedIn && <div>{`Yay you're logged in!`}</div>}
 			{error && <p>{error}</p>}
 			<form className='add__form' onSubmit={handleSubmit}>
 				<div className='input__container'>
@@ -31,7 +30,7 @@ const LoginForm = () => {
 					<input
 						className='input'
 						aria-label='password'
-						type='text'
+						type='password'
 						name='password'
 						value={password}
 						onChange={handleChange}
