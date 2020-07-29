@@ -1,4 +1,4 @@
-.flexbox {
+.list__flexbox {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
@@ -44,10 +44,9 @@
 	background-color: hsl(240, 46%, 57%);
 }
 @media screen and (max-width: 980px) {
-	.flexbox {
+	.list__flexbox {
 		flex-direction: column;
 	}
-
 	.list__container,
 	.list__results__container {
 		flex: 1;

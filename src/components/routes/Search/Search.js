@@ -4,29 +4,31 @@ import './Search.css'
 const Search = () => {
 	return (
 		<div>
-			<header class='search__controls'>
-				<div class='button__container'>
-					<button class='button__'>SEE FAVORITES</button>
+			<header className='search__controls'>
+				<div className='button__container'>
+					<button className='button__'>
+						SEE FAVORITES
+					</button>
 				</div>
-				<form action='' class='search__form'>
+				<form action='' className='search__form'>
 					<input
 						aria-label='search__input'
 						type='text'
 						name='search__input'
-						class='search__input'
+						className='search__input'
 						value=''
 						placeholder='Search your saved homes'
 					/>
-					<button class='search__button'>Cancel</button>
+					<button className='search__button'>Cancel</button>
 				</form>
 			</header>
-			<div class='seach__results__container'>
-				<form action='' class='submit__form'>
+			<div className='seach__results__container'>
+				<form action='' className='submit__form'>
 					<button type='submit'>Search for "main"</button>
 				</form>
-				<div class='search__results'>
-					<ul class='search__results__list'>
-						<li class='search__results__item'>
+				<div className='search__results'>
+					<ul className='search__results__list'>
+						<li className='search__results__item'>
 							15 Main Avenue
 						</li>
 					</ul>

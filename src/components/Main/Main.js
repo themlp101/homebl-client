@@ -12,7 +12,6 @@ import Tour from '../routes/Tour/Tour'
 const Main = () => {
 	const isLogged = useContext(LoggedInContext)
 
-	console.log(isLogged)
 	return (
 		<div className='main_wrapper'>
 			<div className='content__container'>

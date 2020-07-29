@@ -6,7 +6,7 @@ import ListResults from './ListResults/ListResults'
 
 export const ListContainer = (props) => {
 	return (
-		<div className='flexbox'>
+		<div className='list__flexbox'>
 			<div className='list__container'>
 				<AddressList />
 			</div>

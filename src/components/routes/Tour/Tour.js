@@ -12,7 +12,7 @@ const Tour = () => {
 					CANCEL
 				</button>
 			</header>
-			<div className='flexbox'>
+			<div className='tour__flexbox'>
 				<div className='tour__list__container'>
 					<ul className='tour__list'>
 						<li className='tour__list__item selected'>

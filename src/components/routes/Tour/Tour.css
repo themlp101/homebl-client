@@ -1,4 +1,4 @@
-.flexbox {
+.tour__flexbox {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
@@ -107,4 +107,9 @@
 	padding: 0.6rem;
 	width: 6rem;
 	cursor: pointer;
+}
+@media screen and (max-width: 980px) {
+	.tour__flexbox {
+		flex-direction: column;
+	}
 }
