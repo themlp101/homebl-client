@@ -36,7 +36,7 @@ const useGetNotes = (props) => {
 			// cleanup
 			mounted = false
 		}
-	}, [notes, addressId])
+	}, [addressId])
 
 	return { notes, notesError }
 }

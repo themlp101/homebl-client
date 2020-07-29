@@ -24,7 +24,7 @@ export const useGetAddresses = () => {
 
 				if (data.error) throw data.error
 
-				if (mounted) setAddresses(data)
+				mounted && setAddresses(data)
 			} catch (error) {
 				setError(error)
 			}
@@ -32,7 +32,7 @@ export const useGetAddresses = () => {
 
 		getAddresses()
 		return () => (mounted = false)
-	}, [addresses])
+	}, [])
 
 	return { addresses, error }
 }

@@ -10,7 +10,6 @@
 	margin: 0.2rem;
 	text-align: center;
 	cursor: pointer;
-	background-color: hsl(230, 100%, 20%);
 	box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.16),
 		0 3px 6px hsla(0, 0%, 0%, 0.23);
 }
@@ -21,6 +20,7 @@
 	text-decoration: none;
 	color: white;
 	display: inline-block;
+	background-color: hsl(230, 100%, 20%);
 }
 .selected {
 	background-color: hsl(233, 57%, 37%);
