@@ -8,7 +8,7 @@ export const ListContainer = (props) => {
 	return (
 		<div className='list__flexbox'>
 			<div className='list__container'>
-				<AddressList />
+				<AddressList {...props} />
 			</div>
 			<Route
 				path={'/address/:addressId'}

@@ -3,8 +3,9 @@ import { useGetAddresses } from '../../../hooks/useGetAddresses'
 import './AddressList.css'
 import { NavLink } from 'react-router-dom'
 
-const AddressList = () => {
-	const { addresses, error } = useGetAddresses()
+const AddressList = (props) => {
+	const { addresses, error } = useGetAddresses(props)
+
 	return (
 		<ul className='house__list'>
 			{error && <p style={{ color: 'red' }}>{error}</p>}

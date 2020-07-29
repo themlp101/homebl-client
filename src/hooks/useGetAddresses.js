@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import config from '../config'
 import { useTokenService } from '../services/token-services'
 
-export const useGetAddresses = () => {
+export const useGetAddresses = (props) => {
 	const [addresses, setAddresses] = useState([])
 	const [error, setError] = useState(null)
 
@@ -32,7 +32,7 @@ export const useGetAddresses = () => {
 
 		getAddresses()
 		return () => (mounted = false)
-	}, [])
+	}, [props.location])
 
 	return { addresses, error }
 }

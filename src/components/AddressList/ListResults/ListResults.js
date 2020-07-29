@@ -1,6 +1,7 @@
 import React from 'react'
 import useGetAddress from '../../../hooks/useGetAddress'
 import useGetNotes from '../../../hooks/useGetNotes'
+import { ListResultsControls } from './ListResultsControls'
 
 const ListResults = (props) => {
 	const { address, error } = useGetAddress(props)
@@ -8,12 +9,10 @@ const ListResults = (props) => {
 
 	return (
 		<div className='list__results__container'>
-			<header className='main__controls'>
-				<button>Add to Tour</button>
-				<button>Add to Favorites</button>
-				<button>Edit</button>
-				<button>Delete</button>
-			</header>
+			<ListResultsControls
+				history={props.history}
+				addressId={props.match.params.addressId}
+			/>
 			{error ? (
 				<p>{error}</p>
 			) : (
