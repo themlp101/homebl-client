@@ -9,6 +9,7 @@
 	flex: 1;
 	min-height: 500px;
 }
+
 .list__results__container {
 	flex: 2;
 	padding: 2rem;
@@ -33,16 +34,21 @@
 		0 3px 6px rgba(0, 0, 0, 0.23);
 	height: 3rem;
 }
-.main__controls > button {
+.main__controls__button,
+.main__cancel__button {
 	flex: 1;
 	border: 0;
 	background-color: hsl(233, 57%, 37%);
 	color: #fff;
 	cursor: pointer;
 }
-.main__controls > button:hover {
+.main__controls__button:hover {
 	background-color: hsl(240, 46%, 57%);
 }
+.main__cancel__button {
+	background-color: hsl(0, 100%, 34%);
+}
+
 @media screen and (max-width: 980px) {
 	.list__flexbox {
 		flex-direction: column;

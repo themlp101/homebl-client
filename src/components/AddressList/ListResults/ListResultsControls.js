@@ -11,20 +11,35 @@ export const ListResultsControls = ({ history, addressId }) => {
 	return (
 		<>
 			<header className='main__controls'>
-				<button>Add to Tour</button>
-				<button>Add to Favorites</button>
-				<button>Edit</button>
+				<button className='main__controls__button'>
+					Add to Tour
+				</button>
+				<button className='main__controls__button'>
+					Add to Favorites
+				</button>
+				<button className='main__controls__button'>
+					Edit
+				</button>
 				{willDelete ? (
 					<>
-						<button onClick={() => setWillDelete(false)}>
+						<button
+							className='main__controls__button'
+							onClick={() => setWillDelete(false)}
+						>
 							Cancel
 						</button>
-						<button onClick={handleDelete}>
+						<button
+							className='main__cancel__button'
+							onClick={handleDelete}
+						>
 							CONFIRM
 						</button>
 					</>
 				) : (
-					<button onClick={() => setWillDelete(true)}>
+					<button
+						className='main__controls__button'
+						onClick={() => setWillDelete(true)}
+					>
 						Delete
 					</button>
 				)}

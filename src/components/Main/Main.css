@@ -9,6 +9,16 @@
 	height: 100vh;
 	overflow-y: scroll;
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.main_wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.main_wrapper {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
 @media screen and (max-width: 980px) {
 	.flexbox {
 		flex-direction: column;

@@ -7,16 +7,18 @@ const LogoutForm = (props) => {
 	return (
 		<div className='form__container'>
 			{error && <p>{error}</p>}
-			<form className='logout__form'>
+			<form
+				className='logout__form'
+				onSubmit={(event) => handleLogout(event)}
+			>
 				<header className='logout__controls'>
 					<button
+						type='button'
 						onClick={() => props.history.push('/address')}
 					>
 						CANCEL
 					</button>
-					<button onClick={(event) => handleLogout(event)}>
-						LOGOUT
-					</button>
+					<button type='submit'>LOGOUT</button>
 				</header>
 			</form>
 		</div>

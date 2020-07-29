@@ -10,7 +10,7 @@ const Search = () => {
 						SEE FAVORITES
 					</button>
 				</div>
-				<form action='' className='search__form'>
+				<form className='search__form'>
 					<input
 						aria-label='search__input'
 						type='text'
@@ -23,8 +23,8 @@ const Search = () => {
 				</form>
 			</header>
 			<div className='seach__results__container'>
-				<form action='' className='submit__form'>
-					<button type='submit'>Search for "main"</button>
+				<form className='submit__form'>
+					<button type='button'>Search for "main"</button>
 				</form>
 				<div className='search__results'>
 					<ul className='search__results__list'>
