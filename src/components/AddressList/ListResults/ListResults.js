@@ -1,8 +1,11 @@
 import React from 'react'
 import useGetAddress from '../../../hooks/useGetAddress'
+import useGetNotes from '../../../hooks/useGetNotes'
 
 const ListResults = (props) => {
 	const { address, error } = useGetAddress(props)
+	const { notes, notesError } = useGetNotes(props)
+
 	return (
 		<div className='list__results__container'>
 			<header className='main__controls'>
@@ -16,18 +19,20 @@ const ListResults = (props) => {
 			) : (
 				<div>
 					<h2>{address && address.address_1}</h2>
-					<div className='main__notes'>
-						<p>
-							Notes: OMG I love this house so much! The
-							porch is just to die for!
-						</p>
-						<p>
-							Lorem ipsum dolor sit amet consectetur,
-							adipisicing elit. Vel veniam hic dolores
-							corrupti sit. Harum at voluptates corrupti
-							voluptas quisquam!
-						</p>
-					</div>
+					{notesError ? (
+						<div className='main__notes'>
+							<p>{notesError}</p>
+						</div>
+					) : (
+						<div className='main__notes'>
+							{notes &&
+								notes.map((note) => (
+									<p key={note.id}>
+										{note.content}
+									</p>
+								))}
+						</div>
+					)}
 				</div>
 			)}
 		</div>
