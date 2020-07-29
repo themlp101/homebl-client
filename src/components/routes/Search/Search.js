@@ -16,7 +16,7 @@ const Search = () => {
 						type='text'
 						name='search__input'
 						className='search__input'
-						value=''
+						defaultValue=''
 						placeholder='Search your saved homes'
 					/>
 					<button className='search__button'>Cancel</button>

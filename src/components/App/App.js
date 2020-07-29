@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import Header from '../Header/Header'
 import Main from '../Main/Main'
@@ -6,10 +6,14 @@ import { LoggedInContext } from '../context/LoggedInContext'
 import { useTokenService } from '../../services/token-services'
 
 function App() {
+	const [isLogged, setIsLogged] = useState(
+		useTokenService.hasAuthToken()
+	)
+
 	return (
 		<div>
 			<LoggedInContext.Provider
-				value={useTokenService.hasAuthToken()}
+				value={{ isLogged, setIsLogged }}
 			>
 				<Header />
 				<Main />

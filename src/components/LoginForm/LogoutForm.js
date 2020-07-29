@@ -3,7 +3,7 @@ import { useLogout } from '../../hooks/useLogout'
 import './Logout.css'
 
 const LogoutForm = (props) => {
-	const { handleLogout, error } = useLogout()
+	const { handleLogout, error } = useLogout(props)
 	return (
 		<div className='form__container'>
 			{error && <p>{error}</p>}
@@ -14,7 +14,9 @@ const LogoutForm = (props) => {
 					>
 						CANCEL
 					</button>
-					<button onClick={handleLogout}>LOGOUT</button>
+					<button onClick={(event) => handleLogout(event)}>
+						LOGOUT
+					</button>
 				</header>
 			</form>
 		</div>

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import config from '../config'
 import { useTokenService } from '../services/token-services'
 
-export const useLogin = (props) => {
+export const useLogin = ({ history, setIsLogged }) => {
 	const [user_name, setUsername] = useState('')
 	const [password, setPassword] = useState('')
 	const [error, setError] = useState(null)
@@ -28,14 +28,14 @@ export const useLogin = (props) => {
 				}
 			)
 			const data = await res.json()
-			console.log(props)
 			if (data.error) throw data.error
 
 			setUsername('')
 			setPassword('')
 			const { saveAuthToken } = useTokenService
 			saveAuthToken(data.authToken)
-			props.history.push('/')
+			setIsLogged(true)
+			history.push('/address')
 			return () => {}
 		} catch (error) {
 			setError(error)

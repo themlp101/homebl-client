@@ -33,6 +33,7 @@ const AddAddressForm = ({ history }) => {
 				}
 			)
 			const data = await response.json()
+			console.log(data)
 			history.push('/address')
 		} catch (error) {
 			setError(error.message)

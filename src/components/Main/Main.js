@@ -10,7 +10,7 @@ import Search from '../routes/Search/Search'
 import Tour from '../routes/Tour/Tour'
 
 const Main = () => {
-	const isLogged = useContext(LoggedInContext)
+	const { isLogged, setIsLogged } = useContext(LoggedInContext)
 
 	return (
 		<div className='main_wrapper'>
@@ -19,22 +19,33 @@ const Main = () => {
 					<Route
 						exact
 						path='/'
-						render={() => {
-							return !isLogged ? (
+						render={() =>
+							!isLogged ? (
 								<Redirect to={'/login'} />
 							) : (
 								<Redirect to={'/address'} />
 							)
-						}}
+						}
 					/>
 					<Route
 						path='/account'
-						render={(props) => <LogoutForm {...props} />}
+						render={(props) => (
+							<LogoutForm
+								{...props}
+								setIsLogged={setIsLogged}
+							/>
+						)}
 					/>
 					<Route
 						exact
 						path='/add-address'
-						render={(props) => <AddAddress {...props} />}
+						render={(props) => (
+							<AddAddress
+								{...props}
+								isLogged={isLogged}
+								setIsLogged={setIsLogged}
+							/>
+						)}
 					/>
 					<Route
 						path={'/address'}
@@ -44,7 +55,12 @@ const Main = () => {
 					/>
 					<Route
 						path='/login'
-						render={(props) => <LoginForm {...props} />}
+						render={(props) => (
+							<LoginForm
+								{...props}
+								setIsLogged={setIsLogged}
+							/>
+						)}
 					/>
 					<Route
 						path={'/search'}
