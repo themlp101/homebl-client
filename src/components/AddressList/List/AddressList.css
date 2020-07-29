@@ -1,0 +1,27 @@
+.house__list {
+	list-style-type: none;
+	padding: 0.5rem;
+	margin: 0;
+	overflow-y: scroll;
+}
+.list__item,
+.item__link {
+	padding: 0.5rem;
+	margin: 0.2rem;
+	text-align: center;
+	cursor: pointer;
+	background-color: hsl(230, 100%, 20%);
+	box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.16),
+		0 3px 6px hsla(0, 0%, 0%, 0.23);
+}
+.list__item:hover {
+	background-color: hsl(233, 57%, 37%);
+}
+.item__link {
+	text-decoration: none;
+	color: white;
+	display: inline-block;
+}
+.selected {
+	background-color: hsl(233, 57%, 37%);
+}

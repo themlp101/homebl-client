@@ -1,0 +1,110 @@
+.flexbox {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+.content__container {
+	min-height: 500px;
+	box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.12),
+		0 1px 2px hsla(0, 0%, 0%, 0.24);
+}
+.tour__list__container,
+.tour__map {
+	background-color: hsl(0, 0%, 96%);
+	margin: 1rem 1.2rem;
+	padding: 0.8rem;
+	box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.12),
+		0 1px 2px hsla(0, 0%, 0%, 0.24);
+	flex: 1;
+}
+.tour__list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.tour__list__item {
+	margin: 0;
+	padding: 0.5rem;
+	box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.16),
+		0 3px 6px hsla(0, 0%, 0%, 0.23);
+	cursor: pointer;
+}
+.tour__list__item:hover {
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+		0 10px 10px rgba(0, 0, 0, 0.22);
+	background-color: hsl(233, 57%, 37%);
+	color: white;
+}
+.selected {
+	background-color: hsl(233, 57%, 37%);
+	color: white;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+		0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.tour__list__item > p {
+	margin: 0;
+	width: auto;
+	font-size: smaller;
+}
+.tour__map {
+	flex: 2;
+}
+.tour__controls__container {
+	display: flex;
+	margin-bottom: 0.3rem;
+	justify-content: flex-end;
+	background-color: hsl(230, 100%, 20%);
+	box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.16),
+		0 3px 6px hsla(0, 0%, 0%, 0.23);
+	padding: 0.5rem;
+}
+.tour__control__button-start,
+.tour__control__button-cancel {
+	background-color: hsl(233, 57%, 37%);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+		0 3px 6px rgba(0, 0, 0, 0.23);
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	color: white;
+	flex-basis: auto;
+	border: none;
+	border-radius: 5%;
+	margin: 0.3rem;
+	cursor: pointer;
+	height: 2rem;
+	width: 5rem;
+}
+.tour__control__button-start:hover,
+.tour__control__button-cancel:hover,
+.go__button:hover {
+	background-color: hsl(240, 46%, 57%);
+}
+
+.tour__image {
+	max-width: 15em;
+	box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.16),
+		0 3px 6px hsla(0, 0%, 0%, 0.23);
+	cursor: pointer;
+}
+.tour__controls {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.go__button {
+	flex: 1;
+	background-color: hsl(233, 57%, 37%);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+		0 3px 6px rgba(0, 0, 0, 0.23);
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	color: white;
+	flex-basis: auto;
+	border: none;
+	border-radius: 5%;
+	margin: 0.3rem;
+	padding: 0.6rem;
+	width: 6rem;
+	cursor: pointer;
+}

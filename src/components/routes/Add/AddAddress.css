@@ -1,0 +1,49 @@
+.form__container {
+	margin: 3em;
+	flex: 0.5;
+}
+.add__controls {
+	display: flex;
+	background-color: hsl(230, 100%, 20%);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+		0 3px 6px rgba(0, 0, 0, 0.23);
+	height: 2rem;
+}
+
+.add__controls button {
+	flex: 1;
+	border: 0;
+	background-color: hsl(233, 57%, 37%);
+	color: #fff;
+	cursor: pointer;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+		0 3px 6px rgba(0, 0, 0, 0.23);
+	margin: 0.1px;
+}
+.add__controls button:hover {
+	background-color: hsl(240, 46%, 57%);
+}
+.input {
+	width: 10rem;
+	height: 100%;
+	border: none;
+	border-radius: 2%;
+	margin: 5px auto;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+		0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.input__container {
+	margin: 15px 0;
+}
+.input__container label {
+	display: block;
+}
+textarea {
+	width: 15rem;
+	height: 10rem;
+	border: none;
+	border-radius: 2%;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+		0 3px 6px rgba(0, 0, 0, 0.23);
+	resize: none;
+}

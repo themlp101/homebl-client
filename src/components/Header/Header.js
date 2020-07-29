@@ -1,13 +1,14 @@
 import React, { useContext } from 'react'
 import './Header.css'
 import { LoggedInContext } from '../context/LoggedInContext'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
-	const { loggedIn } = useContext(LoggedInContext)
+	const isLogged = useContext(LoggedInContext)
 	return (
 		<header className='main_header'>
 			<div className='sidebar__controls'>
-				{loggedIn ? (
+				{!isLogged ? (
 					<ul className='nav__link__list'>
 						<li>
 							<a href='account.html'>Account</a>
@@ -16,21 +17,19 @@ const Header = () => {
 				) : (
 					<ul className='nav__link__list'>
 						<li>
-							<a href='../index.html'>Home</a>
+							<Link to='/address'>Home</Link>
 						</li>
 						<li>
-							<a href='../search_page/search.html'>
-								Search
-							</a>
+							<Link to='/search'>Search</Link>
 						</li>
 						<li>
-							<a href='../add_page/add.html'>Add</a>
+							<Link to='/add-address'>Add</Link>
 						</li>
 						<li>
-							<a href='../tour_page/tour.html'>Tour</a>
+							<Link to='/tour'>Tour</Link>
 						</li>
 						<li>
-							<a href='account.html'>Account</a>
+							<Link to='/account'>Account</Link>
 						</li>
 					</ul>
 				)}

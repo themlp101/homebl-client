@@ -2,16 +2,54 @@ import React, { useContext } from 'react'
 import './Main.css'
 import LoginForm from '../LoginForm/LoginForm'
 import { LoggedInContext } from '../context/LoggedInContext'
+import { Switch, Route } from 'react-router-dom'
+import { ListContainer } from '../AddressList/ListContainer'
+import LogoutForm from '../LoginForm/LogoutForm'
+import AddAddress from '../routes/Add/AddAddress'
+import Search from '../routes/Search/Search'
+import Tour from '../routes/Tour/Tour'
 
 const Main = () => {
-	const { loggedIn } = useContext(LoggedInContext)
+	const isLogged = useContext(LoggedInContext)
+
+	console.log(isLogged)
 	return (
 		<div className='main_wrapper'>
 			<div className='content__container'>
-				{loggedIn ? (
-					<LoginForm />
+				{!isLogged ? (
+					<Route
+						path='/'
+						render={(props) => <LoginForm {...props} />}
+					/>
 				) : (
-					<p>{`Yay, you're logged in!`}</p>
+					<Switch>
+						<Route
+							path='/account'
+							render={(props) => (
+								<LogoutForm {...props} />
+							)}
+						/>
+						<Route
+							path='/add-address'
+							render={(props) => (
+								<AddAddress {...props} />
+							)}
+						/>
+						<Route
+							path={'/address'}
+							render={(props) => (
+								<ListContainer {...props} />
+							)}
+						/>
+						<Route
+							path={'/search'}
+							render={(props) => <Search {...props} />}
+						/>
+						<Route
+							path={'/tour'}
+							render={(props) => <Tour {...props} />}
+						/>
+					</Switch>
 				)}
 			</div>
 		</div>

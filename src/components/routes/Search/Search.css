@@ -1,0 +1,106 @@
+.search__controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	background-color: hsl(230, 100%, 20%);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+		0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.search__form {
+	display: flex;
+	align-items: stretch;
+}
+.submit__form > button {
+	border: 0;
+	background-color: hsl(233, 57%, 37%);
+	color: #fff;
+	cursor: pointer;
+	padding: 1rem;
+	margin: 0.3rem;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+		0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.submit__form > button:hover {
+	background-color: hsl(240, 46%, 57%);
+}
+.search__button {
+	border: 0;
+	background-color: hsl(233, 57%, 37%);
+	color: #fff;
+	cursor: pointer;
+}
+.search__button:hover {
+	background-color: hsl(240, 46%, 57%);
+}
+.search__input {
+	max-width: 30rem;
+	height: 2rem;
+}
+.search__results__list {
+	list-style-type: none;
+	margin: 5rem 0;
+	padding: 0;
+}
+
+.search__results__item {
+	margin: 0 5rem;
+	padding: 0.5rem;
+	box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.16),
+		0 3px 6px hsla(0, 0%, 0%, 0.23);
+	cursor: pointer;
+}
+
+.search__results__item:hover {
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+		0 10px 10px rgba(0, 0, 0, 0.22);
+	background-color: hsl(233, 57%, 37%);
+	color: white;
+}
+
+.button__container {
+	display: flex;
+}
+
+.button__ {
+	margin: 0;
+	padding: 0.4rem;
+}
+.button__ {
+	border: 0;
+	background-color: hsl(233, 57%, 37%);
+	color: #fff;
+	cursor: pointer;
+}
+.button__:hover {
+	background-color: hsl(240, 46%, 57%);
+}
+
+@media screen and (max-width: 430px) {
+	.search__results__item {
+		margin: 0 1rem;
+		padding: 0.5rem;
+		box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.16),
+			0 3px 6px hsla(0, 0%, 0%, 0.23);
+		cursor: pointer;
+	}
+}
+@media screen and (max-width: 380px) {
+	.search__controls {
+		flex-direction: column;
+		align-items: center;
+		align-content: stretch;
+		background-color: hsl(230, 100%, 20%);
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+			0 3px 6px rgba(0, 0, 0, 0.23);
+	}
+	.button__container {
+		margin: 0;
+		padding: 0;
+	}
+	.button__ {
+		border: 0;
+		background-color: hsl(233, 57%, 37%);
+		color: #fff;
+		cursor: pointer;
+	}
+}

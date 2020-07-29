@@ -1,19 +1,18 @@
 import React from 'react'
 import { useLogin } from '../../hooks/useLogin'
-
-const LoginForm = () => {
+import './Login.css'
+const LoginForm = (props) => {
 	const {
 		handleChange,
 		handleSubmit,
 		user_name,
 		password,
 		error,
-	} = useLogin()
-
+	} = useLogin(props)
 	return (
 		<div className='form__container'>
 			{error && <p>{error}</p>}
-			<form className='add__form' onSubmit={handleSubmit}>
+			<form className='login__form' onSubmit={handleSubmit}>
 				<div className='input__container'>
 					<label htmlFor='username'>Username</label>
 					<input
@@ -36,15 +35,11 @@ const LoginForm = () => {
 						onChange={handleChange}
 					/>
 				</div>
-				<header className='add__controls'>
-					<div className='button__container'>
-						<button
-							onClick={() => console.log('Go back')}
-						>
-							CANCEL
-						</button>
-						<button type='submit'>LOGIN</button>
-					</div>
+				<header className='login__controls'>
+					<button onClick={() => console.log('Go back')}>
+						CANCEL
+					</button>
+					<button type='submit'>LOGIN</button>
 				</header>
 			</form>
 		</div>

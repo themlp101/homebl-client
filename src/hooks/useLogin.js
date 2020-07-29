@@ -1,12 +1,10 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import config from '../config'
 import { useTokenService } from '../services/token-services'
-import { LoggedInContext } from '../components/context/LoggedInContext'
 
-export const useLogin = () => {
+export const useLogin = (props) => {
 	const [user_name, setUsername] = useState('')
 	const [password, setPassword] = useState('')
-	const { loggedIn, setLoggedIn } = useContext(LoggedInContext)
 	const [error, setError] = useState(null)
 
 	const handleChange = (event) => {
@@ -30,14 +28,15 @@ export const useLogin = () => {
 				}
 			)
 			const data = await res.json()
-
+			console.log(props)
 			if (data.error) throw data.error
 
 			setUsername('')
 			setPassword('')
-			const { saveAuthToken, hasAuthToken } = useTokenService
+			const { saveAuthToken } = useTokenService
 			saveAuthToken(data.authToken)
-			setLoggedIn(hasAuthToken())
+			props.history.push('/')
+			return () => {}
 		} catch (error) {
 			setError(error)
 		}
@@ -49,7 +48,6 @@ export const useLogin = () => {
 		error,
 		handleChange,
 		handleSubmit,
-		loggedIn,
 	}
 }
 
