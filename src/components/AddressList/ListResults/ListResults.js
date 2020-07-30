@@ -6,7 +6,7 @@ import { AddressTitle } from './AddressTitle'
 import { NotesResults } from './NotesResults'
 
 const ListResults = (props) => {
-	const { address, error } = useGetAddress(props)
+	const { address, addressError } = useGetAddress(props)
 	const { notes, notesError } = useGetNotes(props)
 
 	return (
@@ -15,14 +15,15 @@ const ListResults = (props) => {
 				history={props.history}
 				addressId={props.match.params.addressId}
 			/>
-			{error ? (
-				<p>{error}</p>
+			{addressError ? (
+				<p>{addressError}</p>
 			) : (
 				<div>
 					<AddressTitle address={{ ...address }} />
 					<NotesResults
 						notesError={notesError}
 						notes={notes}
+						address_id={address.id}
 					/>
 				</div>
 			)}

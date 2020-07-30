@@ -1,13 +1,19 @@
 import React from 'react'
 import { useDeleteAddress } from '../../../../hooks/useDeleteAddress'
+import useEditAddress from '../../../../hooks/useEditAddress'
 
-export const EditControls = ({ history, addressId }) => {
+export const EditControls = ({
+	history,
+	addressId,
+	handleSubmit,
+}) => {
 	const {
 		willDelete,
 		setWillDelete,
 		error,
 		handleDelete,
 	} = useDeleteAddress(history, addressId)
+
 	return (
 		<>
 			<header className='main__controls'>
@@ -15,12 +21,14 @@ export const EditControls = ({ history, addressId }) => {
 					<>
 						<button
 							className='main__controls__button'
+							type='button'
 							onClick={() => setWillDelete(false)}
 						>
 							Cancel
 						</button>
 						<button
 							className='main__cancel__button'
+							type='button'
 							onClick={handleDelete}
 						>
 							CONFIRM
@@ -29,12 +37,23 @@ export const EditControls = ({ history, addressId }) => {
 				) : (
 					<button
 						className='main__controls__button'
+						type='button'
 						onClick={() => setWillDelete(true)}
 					>
 						Delete
 					</button>
 				)}
-				<button className='main__controls__button'>
+				<button
+					className='main__controls__button'
+					type='button'
+					onClick={() => history.goBack()}
+				>
+					Cancel
+				</button>
+				<button
+					type='submit'
+					className='main__controls__button'
+				>
 					Save
 				</button>
 			</header>

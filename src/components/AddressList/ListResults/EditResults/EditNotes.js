@@ -11,7 +11,11 @@ const EditNotes = ({ notes, notesError }) => {
 				<div className='main__notes'>
 					{notes &&
 						notes.map((note) => (
-							<p key={note.id}>{note.content}</p>
+							<textarea
+								key={note.id}
+								defaultValue={note.content}
+								name='content'
+							/>
 						))}
 				</div>
 			)}

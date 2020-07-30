@@ -5,7 +5,7 @@ import config from '../config'
 
 const useGetAddress = (props) => {
 	const [address, setAddress] = useState({})
-	const [error, setError] = useState(null)
+	const [addressError, setError] = useState(null)
 	const { addressId } = props.match.params
 	useEffect(() => {
 		let mounted = true
@@ -31,7 +31,7 @@ const useGetAddress = (props) => {
 		getAddress()
 		return () => (mounted = false)
 	}, [addressId])
-	return { address, error }
+	return { address, addressError }
 }
 
 export default useGetAddress
