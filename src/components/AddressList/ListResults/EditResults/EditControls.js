@@ -1,6 +1,5 @@
 import React from 'react'
 import { useDeleteAddress } from '../../../../hooks/useDeleteAddress'
-import useEditAddress from '../../../../hooks/useEditAddress'
 
 export const EditControls = ({
 	history,
