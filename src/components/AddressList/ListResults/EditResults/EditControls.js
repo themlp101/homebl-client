@@ -1,7 +1,7 @@
 import React from 'react'
-import { useDeleteAddress } from '../../../hooks/useDeleteAddress'
+import { useDeleteAddress } from '../../../../hooks/useDeleteAddress'
 
-export const ListResultsControls = ({ history, addressId }) => {
+export const EditControls = ({ history, addressId }) => {
 	const {
 		willDelete,
 		setWillDelete,
@@ -11,20 +11,6 @@ export const ListResultsControls = ({ history, addressId }) => {
 	return (
 		<>
 			<header className='main__controls'>
-				<button className='main__controls__button'>
-					Add to Tour
-				</button>
-				<button className='main__controls__button'>
-					Add to Favorites
-				</button>
-				<button
-					className='main__controls__button'
-					onClick={() =>
-						history.push(`/address/${addressId}/edit`)
-					}
-				>
-					Edit
-				</button>
 				{willDelete ? (
 					<>
 						<button
@@ -48,6 +34,9 @@ export const ListResultsControls = ({ history, addressId }) => {
 						Delete
 					</button>
 				)}
+				<button className='main__controls__button'>
+					Save
+				</button>
 			</header>
 			{error && <p>{error}</p>}
 		</>

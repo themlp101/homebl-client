@@ -2,6 +2,8 @@ import React from 'react'
 import useGetAddress from '../../../hooks/useGetAddress'
 import useGetNotes from '../../../hooks/useGetNotes'
 import { ListResultsControls } from './ListResultsControls'
+import { AddressTitle } from './AddressTitle'
+import { NotesResults } from './NotesResults'
 
 const ListResults = (props) => {
 	const { address, error } = useGetAddress(props)
@@ -17,21 +19,11 @@ const ListResults = (props) => {
 				<p>{error}</p>
 			) : (
 				<div>
-					<h2>{address && address.address_1}</h2>
-					{notesError ? (
-						<div className='main__notes'>
-							<p>{notesError}</p>
-						</div>
-					) : (
-						<div className='main__notes'>
-							{notes &&
-								notes.map((note) => (
-									<p key={note.id}>
-										{note.content}
-									</p>
-								))}
-						</div>
-					)}
+					<AddressTitle address={{ ...address }} />
+					<NotesResults
+						notesError={notesError}
+						notes={notes}
+					/>
 				</div>
 			)}
 		</div>

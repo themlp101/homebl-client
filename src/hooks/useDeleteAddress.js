@@ -2,7 +2,7 @@ import { useState } from 'react'
 import config from '../config'
 import { useTokenService } from '../services/token-services'
 
-export const useListResultsControls = (history, addressId) => {
+export const useDeleteAddress = (history, addressId) => {
 	const [willDelete, setWillDelete] = useState(false)
 	const [error, setError] = useState(null)
 	const handleDelete = async () => {

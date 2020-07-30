@@ -1,45 +1,19 @@
-import React, { useState } from 'react'
-import config from '../../../../config'
-import { useTokenService } from '../../../../services/token-services'
+import React from 'react'
+import useAddAddress from '../../../../hooks/useAddAddress'
 
 const AddAddressForm = ({ history }) => {
-	// on change store values in state
-	const [address_1, setAddress_1] = useState('')
-	const [city, setCity] = useState('')
-	const [state, setState] = useState('')
-	const [zip_code, setZip_Code] = useState('')
-	const [error, setError] = useState(null)
-
-	// on submit post to api
-
-	const handleSubmit = async (event) => {
-		event.preventDefault()
-		try {
-			const newAddress = {
-				address_1,
-				city,
-				state,
-				zip_code: parseInt(zip_code),
-			}
-			const response = await fetch(
-				`${config.API_ENDPOINT}/address`,
-				{
-					method: 'POST',
-					headers: {
-						'content-type': 'application/json',
-						authorization: `bearer ${useTokenService.getAuthToken()}`,
-					},
-					body: JSON.stringify(newAddress),
-				}
-			)
-			const data = await response.json()
-			console.log(data)
-			history.push('/address')
-		} catch (error) {
-			setError(error.message)
-		}
-	}
-
+	const {
+		handleSubmit,
+		address_1,
+		setAddress_1,
+		city,
+		setCity,
+		state,
+		setState,
+		zip_code,
+		setZip_Code,
+		error,
+	} = useAddAddress(history)
 	return (
 		<form className='add__form'>
 			<div className='input__container'>
@@ -108,7 +82,11 @@ const AddAddressForm = ({ history }) => {
 				<button onClick={() => history.goBack()}>
 					CANCEL
 				</button>
-				<button type='submit' onClick={handleSubmit}>
+				<button
+					type='submit'
+					label='save'
+					onClick={handleSubmit}
+				>
 					SAVE
 				</button>
 			</header>
