@@ -24,6 +24,7 @@ const ListResults = (props) => {
 						notesError={notesError}
 						notes={notes}
 						address_id={address.id}
+						{...props}
 					/>
 				</div>
 			)}

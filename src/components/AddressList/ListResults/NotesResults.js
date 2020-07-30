@@ -1,6 +1,12 @@
 import React from 'react'
+import NoteItem from './NoteItem/NoteItem'
 
-export const NotesResults = ({ notes, notesError, address_id }) => {
+export const NotesResults = ({
+	notes,
+	notesError,
+	address_id,
+	history,
+}) => {
 	return (
 		<>
 			{notesError ? (
@@ -11,13 +17,11 @@ export const NotesResults = ({ notes, notesError, address_id }) => {
 				<div className='main__notes'>
 					{notes &&
 						notes.map((note) => (
-							<p
+							<NoteItem
 								key={note.id}
-								note_id={note.id}
-								address_id={address_id}
-							>
-								{note.content}
-							</p>
+								{...note}
+								history={history}
+							/>
 						))}
 				</div>
 			)}
