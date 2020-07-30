@@ -1,0 +1,4 @@
+Connection info string:
+   "dbname=dbfdd3g369u387 host=ec2-34-225-162-157.compute-1.amazonaws.com port=5432 user=jjwcenbxajtacb password=1754e8a135a2f3274ee0a6c0a30785ffa2e112573f9e465067d2a84111eaca91 sslmode=require"
+Connection URL:
+   postgres://jjwcenbxajtacb:1754e8a135a2f3274ee0a6c0a30785ffa2e112573f9e465067d2a84111eaca91@ec2-34-225-162-157.compute-1.amazonaws.com:5432/dbfdd3g369u387 

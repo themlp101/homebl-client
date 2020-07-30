@@ -1,5 +1,5 @@
 {
-	"name": "homebl-client",
+	"name": "homebl_client",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
