@@ -9,12 +9,16 @@ const AddressList = (props) => {
 	return (
 		<ul className='house__list'>
 			{error && <p style={{ color: 'red' }}>{error}</p>}
-			{addresses ? (
+			{addresses &&
 				addresses.map((address) => (
 					<AddressListItem {...address} />
-				))
-			) : (
-				<p>You should add your first address!</p>
+				))}
+
+			{addresses.length === 0 && (
+				<>
+					<h2>Welcome to Homebl!</h2>
+					<p>You should add your first address!</p>
+				</>
 			)}
 		</ul>
 	)
