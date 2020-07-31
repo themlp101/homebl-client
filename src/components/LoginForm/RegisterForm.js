@@ -71,7 +71,10 @@ const RegisterForm = (props) => {
 				)}
 
 				<header className='login__controls'>
-					<button onClick={() => props.history.goBack()}>
+					<button
+						type='button'
+						onClick={() => props.history.goBack()}
+					>
 						CANCEL
 					</button>
 					<button type='submit' onClick={handleRegister}>
