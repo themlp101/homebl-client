@@ -1,7 +1,7 @@
 import React from 'react'
 import { useGetAddresses } from '../../../hooks/useGetAddresses'
 import './AddressList.css'
-import { NavLink } from 'react-router-dom'
+import AddressListItem from './AddressListItem'
 
 const AddressList = (props) => {
 	const { addresses, error } = useGetAddresses(props)
@@ -9,18 +9,13 @@ const AddressList = (props) => {
 	return (
 		<ul className='house__list'>
 			{error && <p style={{ color: 'red' }}>{error}</p>}
-			{addresses &&
+			{addresses ? (
 				addresses.map((address) => (
-					<li key={address.id} className='list__item'>
-						<NavLink
-							to={`/address/${address.id}`}
-							className='item__link'
-							activeClassName='selected'
-						>
-							{address.address_1}
-						</NavLink>
-					</li>
-				))}
+					<AddressListItem {...address} />
+				))
+			) : (
+				<p>You should add your first address!</p>
+			)}
 		</ul>
 	)
 }
