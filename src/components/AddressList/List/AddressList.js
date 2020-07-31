@@ -11,7 +11,7 @@ const AddressList = (props) => {
 			{error && <p style={{ color: 'red' }}>{error}</p>}
 			{addresses &&
 				addresses.map((address) => (
-					<AddressListItem {...address} />
+					<AddressListItem key={address.id} {...address} />
 				))}
 
 			{addresses.length === 0 && (

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const AddressListItem = (address) => {
 	return (
-		<li key={address.id} className='list__item'>
+		<li className='list__item'>
 			<NavLink
 				to={`/address/${address.id}`}
 				className='item__link'
