@@ -25,15 +25,7 @@ const Header = () => {
 						<li>
 							<Link to='/address'>Home</Link>
 						</li>
-						<li>
-							<Link to='/search'>Search</Link>
-						</li>
-						<li>
-							<Link to='/add-address'>Add</Link>
-						</li>
-						<li>
-							<Link to='/tour'>Tour</Link>
-						</li>
+
 						<li>
 							<Link to='/account'>Account</Link>
 						</li>
