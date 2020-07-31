@@ -2,7 +2,7 @@ import { useState } from 'react'
 import config from '../config'
 import { useTokenService } from '../services/token-services'
 
-const useAddAddress = ({ history }) => {
+const useAddAddress = (history) => {
 	// on change store values in state
 	const [address_1, setAddress_1] = useState('')
 	const [city, setCity] = useState('')

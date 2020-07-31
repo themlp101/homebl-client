@@ -36,8 +36,13 @@ const LoginForm = (props) => {
 					/>
 				</div>
 				<header className='login__controls'>
-					<button onClick={() => console.log('Go back')}>
-						CANCEL
+					<button
+						type='button'
+						onClick={() =>
+							props.history.push('/register')
+						}
+					>
+						REGISTER
 					</button>
 					<button type='submit'>LOGIN</button>
 				</header>

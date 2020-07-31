@@ -8,6 +8,7 @@ import LogoutForm from '../LoginForm/LogoutForm'
 import AddAddress from '../routes/Add/AddAddress'
 import Search from '../routes/Search/Search'
 import Tour from '../routes/Tour/Tour'
+import RegisterForm from '../LoginForm/RegisterForm'
 
 const Main = () => {
 	const { isLogged, setIsLogged } = useContext(LoggedInContext)
@@ -57,6 +58,15 @@ const Main = () => {
 						path='/login'
 						render={(props) => (
 							<LoginForm
+								{...props}
+								setIsLogged={setIsLogged}
+							/>
+						)}
+					/>
+					<Route
+						path='/register'
+						render={(props) => (
+							<RegisterForm
 								{...props}
 								setIsLogged={setIsLogged}
 							/>
