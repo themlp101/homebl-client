@@ -27,6 +27,10 @@ const Header = () => {
 						</li>
 
 						<li>
+							<Link to='/add-address'>Add</Link>
+						</li>
+
+						<li>
 							<Link to='/account'>Account</Link>
 						</li>
 					</ul>
