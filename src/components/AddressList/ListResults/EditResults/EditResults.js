@@ -27,19 +27,13 @@ const EditResults = (props) => {
 				{addressError ? (
 					<p>{addressError}</p>
 				) : (
-					<div>
-						<EditAddress
-							address={{ ...address }}
-							updateAddress_1={updateAddress_1}
-							updateCity={updateCity}
-							updateState={updateState}
-							updateZipCode={updateZipCode}
-						/>
-						<EditNotes
-							notesError={notesError}
-							notes={notes}
-						/>
-					</div>
+					<EditAddress
+						address={{ ...address }}
+						updateAddress_1={updateAddress_1}
+						updateCity={updateCity}
+						updateState={updateState}
+						updateZipCode={updateZipCode}
+					/>
 				)}
 			</form>
 		</div>
