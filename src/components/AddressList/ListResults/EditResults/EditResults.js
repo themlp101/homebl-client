@@ -1,14 +1,12 @@
 import React from 'react'
 import useGetAddress from '../../../../hooks/useGetAddress'
-import useGetNotes from '../../../../hooks/useGetNotes'
+
 import EditAddress from './EditAddress'
-import EditNotes from './EditNotes'
 import { EditControls } from './EditControls'
 import useEditAddress from '../../../../hooks/useEditAddress'
 
 const EditResults = (props) => {
 	const { address, addressError } = useGetAddress(props)
-	const { notes, notesError } = useGetNotes(props)
 	const {
 		updateAddress_1,
 		updateCity,
