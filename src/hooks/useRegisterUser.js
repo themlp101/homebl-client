@@ -55,7 +55,7 @@ const useRegisterUser = ({ history, setIsLogged }) => {
 			setPassword2('')
 			setFullName('')
 			const { saveAuthToken } = useTokenService
-			saveAuthToken(data.saveAuthToken)
+			saveAuthToken(data.authToken)
 			setIsLogged(true)
 			history.push('/address')
 		} catch (error) {
