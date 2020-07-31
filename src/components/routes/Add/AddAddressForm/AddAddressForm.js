@@ -68,16 +68,7 @@ const AddAddressForm = ({ history }) => {
 					onChange={(e) => setZip_Code(e.target.value)}
 				/>
 			</div>
-			<div className='input__container'>
-				<label htmlFor='content'>Add Note</label>
-				<textarea
-					aria-label='add note'
-					type='text'
-					name='content'
-					maxLength='2'
-					defaultValue=''
-				></textarea>
-			</div>
+
 			<header className='add__controls'>
 				<button onClick={() => history.goBack()}>
 					CANCEL

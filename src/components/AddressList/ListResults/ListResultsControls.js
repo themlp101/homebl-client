@@ -11,12 +11,6 @@ export const ListResultsControls = ({ history, addressId }) => {
 	return (
 		<>
 			<header className='main__controls'>
-				<button className='main__controls__button'>
-					Add to Tour
-				</button>
-				<button className='main__controls__button'>
-					Add to Favorites
-				</button>
 				<button
 					className='main__controls__button'
 					onClick={() =>
