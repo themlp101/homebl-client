@@ -6,6 +6,12 @@
 	height: 40vmin;
 	pointer-events: none;
 }
+.md__icon {
+	margin: auto;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+}
 
 @media (prefers-reduced-motion: no-preference) {
 	.App-logo {

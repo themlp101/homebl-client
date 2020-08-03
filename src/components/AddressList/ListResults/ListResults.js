@@ -6,7 +6,8 @@ import { AddressTitle } from './AddressTitle'
 import { NotesResults } from './NotesResults'
 import config from '../../../config'
 import { useTokenService } from '../../../services/token-services'
-
+import { MdAdd } from 'react-icons/md'
+import './ListResults.css'
 const ListResults = (props) => {
 	const { address, addressError } = useGetAddress(props)
 	const { notes, notesError } = useGetNotes(props)
@@ -90,10 +91,13 @@ const ListResults = (props) => {
 						)}
 					</div>
 					<button
+						aria-label='Add Note'
+						className='add__note__btn'
 						type='button'
 						onClick={() => toggleIsAddingNote(true)}
 					>
-						ADD NOTE
+						<MdAdd className='md__icon add__icon' />
+						<label>ADD NOTE</label>
 					</button>
 				</>
 			)}

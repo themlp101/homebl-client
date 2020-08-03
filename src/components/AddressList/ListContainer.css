@@ -41,6 +41,12 @@
 	background-color: hsl(233, 57%, 37%);
 	color: #fff;
 	cursor: pointer;
+	text-align: center;
+}
+.main__controls__button > label {
+	display: inline;
+	margin-left: 1rem;
+	align-self: center;
 }
 .main__controls__button:hover {
 	background-color: hsl(240, 46%, 57%);
@@ -48,7 +54,9 @@
 .main__cancel__button {
 	background-color: hsl(0, 100%, 34%);
 }
-
+.larger {
+	font-size: 24px;
+}
 @media screen and (max-width: 980px) {
 	.list__flexbox {
 		flex-direction: column;

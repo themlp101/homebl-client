@@ -1,0 +1,22 @@
+.add__note__btn {
+	background-color: hsl(233, 57%, 37%);
+	border: 0;
+	cursor: pointer;
+	padding: 5px 10px;
+	color: #fff;
+	display: inline-flex;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+		0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.add__note__btn > label {
+	align-self: center;
+	cursor: pointer;
+}
+
+.add__icon {
+	font-size: 1.6rem;
+	margin: auto 1rem auto 0.5rem;
+}
+.add__note__btn:hover {
+	background-color: hsl(240, 46%, 57%);
+}

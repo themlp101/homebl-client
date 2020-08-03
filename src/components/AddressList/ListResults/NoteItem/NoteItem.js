@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
 import config from '../../../../config'
 import { useTokenService } from '../../../../services/token-services'
+import {
+	MdCancel,
+	MdDeleteForever,
+	MdCheckCircle,
+	MdEdit,
+} from 'react-icons/md'
+import './NoteItem.css'
 
 const NoteItem = ({ content, id, history, address_id }) => {
 	const [isEditing, setIsEditing] = useState(false)
@@ -43,29 +50,57 @@ const NoteItem = ({ content, id, history, address_id }) => {
 	}
 
 	return (
-		<>
+		<div className='note__container'>
 			{isEditing ? (
-				<form onSubmit={(e) => handleEditNote(e)}>
-					<input
+				<form
+					className='edit__note__form'
+					onSubmit={(e) => handleEditNote(e)}
+				>
+					<textarea
 						type='text'
 						name='content'
 						defaultValue={content}
+						className='edit__note__input'
 					/>
-					<button type='button' onClick={handleClick}>
-						CANCEL
-					</button>
-					<button type='button' onClick={handleDeleteNote}>
-						DELETE
-					</button>
-					<button type='submit'>SAVE</button>
+
+					<div className='edit__btn__controls'>
+						<button
+							className='edit__button cancel__button'
+							type='button'
+							onClick={handleClick}
+						>
+							<MdCancel className='md__icon ' />
+						</button>
+						<button
+							aria-label='Delete'
+							type='button'
+							onClick={handleDeleteNote}
+							className='edit__button delete__button'
+						>
+							<MdDeleteForever className='md__icon ' />
+						</button>
+						<button
+							type='submit'
+							className='edit__button save__btn'
+							aria-label='Save'
+						>
+							<MdCheckCircle className='md__icon save__icon' />
+						</button>
+					</div>
 				</form>
 			) : (
 				<>
 					<p>{content}</p>
-					<button onClick={handleClick}>EDIT NOTE</button>
+					<button
+						className='edit__button edit__btn'
+						onClick={handleClick}
+						aria-label='Edit'
+					>
+						<MdEdit className='md__icon' />
+					</button>
 				</>
 			)}
-		</>
+		</div>
 	)
 }
 
