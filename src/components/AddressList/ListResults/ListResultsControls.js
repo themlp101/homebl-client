@@ -30,7 +30,7 @@ export const ListResultsControls = ({ history, addressId }) => {
 					'
 					/>
 					<label className='main__controls__button__label'>
-						EDIT NOTE
+						EDIT ADDRESS
 					</label>
 				</button>
 				{willDelete ? (

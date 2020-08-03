@@ -1,6 +1,12 @@
 import React from 'react'
 import { useDeleteAddress } from '../../../../hooks/useDeleteAddress'
-
+import {
+	MdCancel,
+	MdDelete,
+	MdDeleteForever,
+	MdCheckCircle,
+} from 'react-icons/md'
+import './EditControls.css'
 export const EditControls = ({
 	history,
 	addressId,
@@ -15,45 +21,65 @@ export const EditControls = ({
 
 	return (
 		<>
-			<header className='main__controls'>
+			<header className='edit__controls'>
 				{willDelete ? (
 					<>
 						<button
-							className='main__controls__button'
+							aria-label='Cancel Delete'
+							className='edit__controls__button'
 							type='button'
 							onClick={() => setWillDelete(false)}
 						>
-							Cancel
+							<MdCancel className='edit__address__icon' />
+							<label className='edit__controls__button__label'>
+								CANCEL
+							</label>
 						</button>
 						<button
-							className='main__cancel__button'
+							aria-label='Confirm Delete'
+							className='edit__cancel__button'
 							type='button'
 							onClick={handleDelete}
 						>
-							CONFIRM
+							<MdDeleteForever className='edit__address__icon' />
+							<label className='edit__controls__button__label'>
+								CONFIRM
+							</label>
 						</button>
 					</>
 				) : (
 					<button
-						className='main__controls__button'
+						aria-label='Delete'
+						className='edit__controls__button'
 						type='button'
 						onClick={() => setWillDelete(true)}
 					>
-						Delete
+						<MdDelete className='edit__address__icon' />
+						<label className='edit__controls__button__label'>
+							DELETE
+						</label>
 					</button>
 				)}
 				<button
-					className='main__controls__button'
+					aria-label='Discard Changes'
+					className='edit__controls__button'
 					type='button'
 					onClick={() => history.goBack()}
 				>
-					Cancel
+					<MdCancel className='edit__address__icon' />
+					<label className='edit__controls__button__label'>
+						DISCARD CHANGES
+					</label>
 				</button>
 				<button
+					aria-label='Save Changes'
 					type='submit'
-					className='main__controls__button'
+					className='edit__controls__button'
 				>
-					Save
+					<MdCheckCircle className='edit__address__icon' />
+					<label className='edit__controls__button__label'>
+						SAVE CHANGES
+					</label>
 				</button>
 			</header>
 			{error && <p>{error}</p>}

@@ -1,0 +1,54 @@
+.edit__controls {
+	display: flex;
+	color: white;
+	background-color: hsl(230, 100%, 20%);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+		0 3px 6px rgba(0, 0, 0, 0.23);
+	height: 3rem;
+}
+.edit__controls__button,
+.edit__cancel__button {
+	flex: 1;
+	border: 0;
+	background-color: hsl(233, 57%, 37%);
+	color: #fff;
+	cursor: pointer;
+	text-align: center;
+	display: flex;
+}
+.edit__controls__button__label {
+	flex: 2;
+	margin-left: 1rem;
+	align-self: center;
+	margin: auto;
+}
+.edit__controls__button:hover {
+	background-color: hsl(240, 46%, 57%);
+}
+.edit__cancel__button {
+	background-color: hsl(0, 100%, 34%);
+}
+.edit__cancel__button:hover {
+	background-color: hsl(0, 100%, 44%);
+}
+.edit__address__icon {
+	flex: 1;
+	font-size: 36px;
+	align-self: center;
+}
+
+@media screen and (max-width: 750px) {
+	.edit__controls__button__label {
+		font-size: 0.7rem;
+	}
+}
+@media screen and (max-width: 650px) {
+	.edit__controls__button__label {
+		font-size: 0.6rem;
+	}
+}
+@media screen and (max-width: 550px) {
+	.edit__controls__button__label {
+		font-size: 0.4rem;
+	}
+}

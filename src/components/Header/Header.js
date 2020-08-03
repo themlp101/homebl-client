@@ -21,6 +21,7 @@ const Header = () => {
 								<Link aria-label='Login' to='/'>
 									<MdAccountCircle className='header__icon' />
 								</Link>
+								<label>LOGIN/REGISTER</label>
 							</button>
 						</li>
 					</ul>
@@ -31,6 +32,7 @@ const Header = () => {
 								<Link aria-label='Home' to='/address'>
 									<MdHome className='header__icon' />
 								</Link>
+								<label>HOME</label>
 							</button>
 						</li>
 
@@ -42,6 +44,7 @@ const Header = () => {
 								>
 									<MdAddCircle className='header__icon' />
 								</Link>
+								<label>ADD ADDRESS</label>
 							</button>
 						</li>
 
@@ -53,6 +56,7 @@ const Header = () => {
 								>
 									<MdAccountCircle className='header__icon' />
 								</Link>
+								<label>LOGIN</label>
 							</button>
 						</li>
 					</ul>

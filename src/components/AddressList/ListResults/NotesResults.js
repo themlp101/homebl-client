@@ -1,6 +1,6 @@
 import React from 'react'
 import NoteItem from './NoteItem/NoteItem'
-
+import './NotesResults.css'
 export const NotesResults = ({
 	notes,
 	notesError,

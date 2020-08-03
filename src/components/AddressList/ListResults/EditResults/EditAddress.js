@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './EditAddress.css'
 const EditAddress = ({
 	address,
 	updateAddress_1,
@@ -10,11 +10,11 @@ const EditAddress = ({
 }) => {
 	return (
 		<>
-			<div className='input__container'>
+			<div className='edit__input__container'>
 				{error && <p>{error}</p>}
 				<label htmlFor='address_1'>Address</label>
 				<input
-					className='input'
+					className='edit__input'
 					aria-label='add address'
 					type='text'
 					name='address_1'
@@ -23,10 +23,10 @@ const EditAddress = ({
 					onChange={(e) => updateAddress_1(e.target.value)}
 				/>
 			</div>
-			<div className='input__container'>
+			<div className='edit__input__container'>
 				<label htmlFor='city'>City</label>
 				<input
-					className='input'
+					className='edit__input'
 					aria-label='add city'
 					type='text'
 					name='city'
@@ -35,10 +35,10 @@ const EditAddress = ({
 					onChange={(e) => updateCity(e.target.value)}
 				/>
 			</div>
-			<div className='input__container'>
+			<div className='edit__input__container'>
 				<label htmlFor='state'>State</label>
 				<input
-					className='input'
+					className='edit__input'
 					aria-label='add state'
 					type='text'
 					name='state'
@@ -48,10 +48,10 @@ const EditAddress = ({
 					onChange={(e) => updateState(e.target.value)}
 				/>
 			</div>
-			<div className='input__container'>
+			<div className='edit__input__container'>
 				<label htmlFor='zip_code'>Zip Code</label>
 				<input
-					className='input'
+					className='edit__input'
 					aria-label='add zip code'
 					type='text'
 					name='zip_code'

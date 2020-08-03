@@ -40,6 +40,9 @@
 	border: 0;
 	flex: 1;
 }
+.header__btn > label {
+	color: #fff;
+}
 .header__btn:hover {
 	background-color: hsl(240, 46%, 57%);
 }

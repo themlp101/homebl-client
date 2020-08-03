@@ -15,6 +15,7 @@ const Main = () => {
 
 	return (
 		<div className='main_wrapper'>
+			<h1>HOMEBL</h1>
 			<div className='content__container'>
 				<Switch>
 					<Route

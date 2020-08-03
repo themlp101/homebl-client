@@ -90,7 +90,7 @@ const NoteItem = ({ content, id, history, address_id }) => {
 				</form>
 			) : (
 				<>
-					<p>{content}</p>
+					<h3>{content}</h3>
 					<button
 						className='edit__button edit__btn'
 						onClick={handleClick}
