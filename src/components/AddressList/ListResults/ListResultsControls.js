@@ -2,10 +2,12 @@ import React from 'react'
 import { useDeleteAddress } from '../../../hooks/useDeleteAddress'
 import {
 	MdCancel,
+	MdDelete,
 	MdDeleteForever,
 	MdCheckCircle,
 	MdEdit,
 } from 'react-icons/md'
+import './ListResultsControls.css'
 export const ListResultsControls = ({ history, addressId }) => {
 	const {
 		willDelete,
@@ -23,30 +25,56 @@ export const ListResultsControls = ({ history, addressId }) => {
 						history.push(`/address/${addressId}/edit`)
 					}
 				>
-					<MdEdit className='md__icon larger' />
-					<label>EDIT NOTE</label>
+					<MdEdit
+						className='main__controls__icon
+					'
+					/>
+					<label className='main__controls__button__label'>
+						EDIT NOTE
+					</label>
 				</button>
 				{willDelete ? (
 					<>
 						<button
+							aria-label='Cancel'
 							className='main__controls__button'
 							onClick={() => setWillDelete(false)}
 						>
-							Cancel
+							<MdCancel
+								className='main__controls__icon
+							'
+							/>
+							<label className='main__controls__button__label'>
+								CANCEL
+							</label>
 						</button>
 						<button
+							aria-label='Confirm Delete'
 							className='main__cancel__button'
 							onClick={handleDelete}
 						>
-							CONFIRM
+							<MdDeleteForever
+								className='main__controls__icon
+							'
+							/>
+							<label className='main__controls__button__label'>
+								CONFIRM
+							</label>
 						</button>
 					</>
 				) : (
 					<button
+						arial-label='Delete'
 						className='main__controls__button'
 						onClick={() => setWillDelete(true)}
 					>
-						Delete
+						<MdDelete
+							className='main__controls__icon
+						'
+						/>
+						<label className='main__controls__button__label'>
+							DELETE
+						</label>
 					</button>
 				)}
 			</header>

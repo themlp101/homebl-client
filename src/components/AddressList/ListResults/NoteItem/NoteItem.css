@@ -52,3 +52,20 @@
 	background-color: hsl(240, 46%, 57%);
 	color: hsl(0, 100%, 57%);
 }
+.md__icon {
+	margin: auto;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+}
+
+@media screen and (max-width: 530px) {
+	.edit__note__form {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	.edit__btn__controls {
+		flex-direction: row;
+	}
+}
