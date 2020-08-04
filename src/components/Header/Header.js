@@ -17,46 +17,57 @@ const Header = () => {
 				{!isLogged ? (
 					<ul className='nav__link__list'>
 						<li>
-							<button className='header__btn'>
-								<Link aria-label='Login' to='/'>
+							<button
+								aria-label='Login or Register'
+								className='header__btn'
+							>
+								<Link
+									aria-label='Login or Register'
+									to='/'
+								>
 									<MdAccountCircle className='header__icon' />
 								</Link>
-								<label>LOGIN/REGISTER</label>
 							</button>
 						</li>
 					</ul>
 				) : (
 					<ul className='nav__link__list'>
 						<li>
-							<button className='header__btn'>
+							<button
+								aria-label='Home'
+								className='header__btn'
+							>
 								<Link aria-label='Home' to='/address'>
 									<MdHome className='header__icon' />
 								</Link>
-								<label>HOME</label>
 							</button>
 						</li>
 
 						<li>
-							<button className='header__btn'>
+							<button
+								aria-label='Add Address'
+								className='header__btn'
+							>
 								<Link
 									aria-label='Add Address'
 									to='/add-address'
 								>
 									<MdAddCircle className='header__icon' />
 								</Link>
-								<label>ADD ADDRESS</label>
 							</button>
 						</li>
 
 						<li>
-							<button className='header__btn'>
+							<button
+								aria-label='Log in or Log out'
+								className='header__btn'
+							>
 								<Link
 									aria-label='Log in or Log out'
 									to='/account'
 								>
 									<MdAccountCircle className='header__icon' />
 								</Link>
-								<label>LOGIN</label>
 							</button>
 						</li>
 					</ul>

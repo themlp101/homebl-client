@@ -4,10 +4,10 @@ import {
 	MdCancel,
 	MdDelete,
 	MdDeleteForever,
-	MdCheckCircle,
 	MdEdit,
 } from 'react-icons/md'
 import './ListResultsControls.css'
+
 export const ListResultsControls = ({ history, addressId }) => {
 	const {
 		willDelete,

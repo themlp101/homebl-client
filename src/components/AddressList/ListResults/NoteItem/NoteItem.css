@@ -19,7 +19,19 @@
 	font-size: 1.6rem;
 	margin: 1em 0;
 	resize: none;
+	overflow-y: scroll;
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.edit__note__input::-webkit-scrollbar {
+	display: hidden;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.edit__note__input {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
 .edit__btn__controls {
 	flex: 0.25;
 	display: flex;

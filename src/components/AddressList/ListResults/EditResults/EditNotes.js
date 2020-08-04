@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './EditNotes.css'
 const EditNotes = ({ notes, notesError }) => {
 	return (
 		<>

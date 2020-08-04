@@ -65,6 +65,7 @@ const NoteItem = ({ content, id, history, address_id }) => {
 
 					<div className='edit__btn__controls'>
 						<button
+							aria-label='Cancel Edit'
 							className='edit__button cancel__button'
 							type='button'
 							onClick={handleClick}
