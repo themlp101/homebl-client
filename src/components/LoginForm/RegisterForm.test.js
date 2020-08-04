@@ -3,7 +3,7 @@ import { render, screen, getAllByText } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import RegisterForm from './RegisterForm'
 
-describe.skip('<RegisterForm/>', () => {
+describe('<RegisterForm/>', () => {
 	it('should render without crashing', () => {
 		const { getByTestId, getByLabelText, getByText } = render(
 			<MemoryRouter>

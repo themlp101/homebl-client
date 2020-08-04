@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom'
 import Main from './Main'
 import { LoggedInContext } from '../context/LoggedInContext'
 
-describe.skip('<Main/>', () => {
+describe('<Main/>', () => {
 	it('should render without crashing', () => {
 		const { getByTestId } = render(
 			<MemoryRouter>

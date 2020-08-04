@@ -53,6 +53,7 @@ const NoteItem = ({ content, id, history, address_id }) => {
 		<div className='note__container'>
 			{isEditing ? (
 				<form
+					data-testid='edit-note-form'
 					className='edit__note__form'
 					onSubmit={(e) => handleEditNote(e)}
 				>

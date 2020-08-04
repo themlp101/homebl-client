@@ -3,7 +3,7 @@ import { render } from '@testing-library/react'
 import App from './App'
 import { MemoryRouter } from 'react-router-dom'
 
-test.skip('renders learn react link', () => {
+test('renders learn react link', () => {
 	const { getByTestId } = render(
 		<MemoryRouter>
 			<App />

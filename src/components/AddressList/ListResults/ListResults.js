@@ -15,7 +15,10 @@ const ListResults = (props) => {
 	const { toggleIsAddingNote, isAddingNote } = useAddNote(props)
 
 	return (
-		<div className='list__results__container'>
+		<div
+			data-testid='list-results-container'
+			className='list__results__container'
+		>
 			<ListResultsControls
 				history={props.history}
 				addressId={props.match.params.addressId}

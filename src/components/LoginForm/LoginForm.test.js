@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import LoginForm from './LoginForm'
 
-describe.skip('<LoginForm />', () => {
+describe('<LoginForm />', () => {
 	it('should render without crashing', () => {
 		const { getByTestId } = render(
 			<MemoryRouter>

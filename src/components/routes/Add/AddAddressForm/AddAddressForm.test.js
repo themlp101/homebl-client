@@ -3,7 +3,7 @@ import { render } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import AddAddressForm from './AddAddressForm'
 
-describe.skip('<AddAddressForm/>', () => {
+describe('<AddAddressForm/>', () => {
 	it('should render without crashing', () => {
 		const { getByLabelText, getByText } = render(
 			<MemoryRouter>

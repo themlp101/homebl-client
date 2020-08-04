@@ -10,7 +10,10 @@ const EditAddress = ({
 }) => {
 	return (
 		<>
-			<div className='edit__input__container'>
+			<div
+				data-testid='edit-input-container'
+				className='edit__input__container'
+			>
 				{error && <p>{error}</p>}
 				<label htmlFor='address_1'>Address</label>
 				<input

@@ -17,7 +17,10 @@ export const ListResultsControls = ({ history, addressId }) => {
 	} = useDeleteAddress(history, addressId)
 	return (
 		<>
-			<header className='main__controls'>
+			<header
+				data-testid='main-controls'
+				className='main__controls'
+			>
 				<button
 					aria-label='Edit Note'
 					className='main__controls__button'
@@ -64,7 +67,7 @@ export const ListResultsControls = ({ history, addressId }) => {
 					</>
 				) : (
 					<button
-						arial-label='Delete'
+						aria-label='Delete'
 						className='main__controls__button'
 						onClick={() => setWillDelete(true)}
 					>

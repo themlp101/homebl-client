@@ -16,7 +16,10 @@ const EditResults = (props) => {
 	} = useEditAddress(props.history, props.match, address)
 	return (
 		<div className='list__results__container'>
-			<form onSubmit={(e) => handleSubmit(e)}>
+			<form
+				data-testid='edit-controls-form'
+				onSubmit={(e) => handleSubmit(e)}
+			>
 				<EditControls
 					history={props.history}
 					addressId={props.match.params.addressId}

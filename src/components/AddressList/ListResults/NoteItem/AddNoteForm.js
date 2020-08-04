@@ -7,6 +7,7 @@ const AddNoteForm = (props) => {
 
 	return (
 		<form
+			data-testid='add-note-form'
 			name='add__note__form'
 			className='add__note__form'
 			onSubmit={handleSubmit}
