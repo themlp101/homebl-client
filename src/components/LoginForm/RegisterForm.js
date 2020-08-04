@@ -18,7 +18,7 @@ const RegisterForm = (props) => {
 	return (
 		<div className='form__container'>
 			{error && <p>{error}</p>}
-			<form className='login__form'>
+			<form data-testid='register-form' className='login__form'>
 				<div className='input__container'>
 					<label htmlFor='full_name'>Full Name</label>
 					<input

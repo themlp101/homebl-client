@@ -11,7 +11,7 @@ function App() {
 	)
 
 	return (
-		<div>
+		<div data-testid='app-div'>
 			<LoggedInContext.Provider
 				value={{ isLogged, setIsLogged }}
 			>

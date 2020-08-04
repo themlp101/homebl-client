@@ -5,13 +5,16 @@ import './Logout.css'
 const LogoutForm = (props) => {
 	const { handleLogout, error } = useLogout(props)
 	return (
-		<div className='form__container'>
+		<div data-testid='logout-form' className='form__container'>
 			{error && <p>{error}</p>}
 			<form
 				className='logout__form'
 				onSubmit={(event) => handleLogout(event)}
 			>
-				<header className='logout__controls'>
+				<header
+					data-testid='logout-controls'
+					className='logout__controls'
+				>
 					<button
 						type='button'
 						onClick={() => props.history.push('/address')}

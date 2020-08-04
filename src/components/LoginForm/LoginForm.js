@@ -10,7 +10,7 @@ const LoginForm = (props) => {
 		error,
 	} = useLogin(props)
 	return (
-		<div className='form__container'>
+		<div data-testid='login-form' className='form__container'>
 			{error && <p>{error}</p>}
 			<form className='login__form' onSubmit={handleSubmit}>
 				<div className='input__container'>

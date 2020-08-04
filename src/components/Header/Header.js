@@ -12,7 +12,10 @@ const Header = () => {
 		return () => {}
 	}, [isLogged])
 	return (
-		<header className='main_header'>
+		<header
+			data-testid='header-container'
+			className='main_header'
+		>
 			<div className='sidebar__controls'>
 				{!isLogged ? (
 					<ul className='nav__link__list'>
@@ -31,7 +34,10 @@ const Header = () => {
 						</li>
 					</ul>
 				) : (
-					<ul className='nav__link__list'>
+					<ul
+						data-testid='header-controls1'
+						className='nav__link__list'
+					>
 						<li>
 							<button
 								aria-label='Home'

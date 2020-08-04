@@ -15,8 +15,11 @@ const Main = () => {
 
 	return (
 		<div className='main_wrapper'>
-			<h1>HOMEBL</h1>
-			<div className='content__container'>
+			<h1 style={{ visibility: 'hidden' }}>HOMEBL</h1>
+			<div
+				data-testid='main-container'
+				className='content__container'
+			>
 				<Switch>
 					<Route
 						exact
