@@ -32,8 +32,8 @@ As a homebuyer, you search countless websites, like Zillow, Redfin, etc., only t
 
 ---
 
-![Homebl](public\images\front-homebl.png)
-![Homebl Mobile](public\images\mobile-homebl.png)
+![Homebl](./public/images/front-homebl.png)
+![Homebl Mobile](./public/images/mobile-homebl.png)
 
 ### Features
 
