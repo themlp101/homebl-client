@@ -1,8 +1,8 @@
-# Homebl - Home Shopping Notebook App
+# Homebl
 
 Simple create, read, update, and delete utility application for homeshoppers
 
-## Live Application:
+## Live Application
 
 ---
 
@@ -32,23 +32,94 @@ As a homebuyer, you search countless websites, like Zillow, Redfin, etc., only t
 
 ---
 
+![Homebl](public\images\front-homebl.png)
+![Homebl Mobile](public\images\mobile-homebl.png)
+
 ### Features
 
 ---
 
--   Login and Register
--   Logout persists user stored data
--   Add an address - Simple format for: mailing address, city, state, zip code
--   Add a note for an address - Simple content, user specific
--   Edit the fields for the address
--   Edit the conent of the note
--   Delete the address entirely
--   Delete spcific address note(s)
+- Login and Register
+- Logout persists user stored data
+- Add an address - Simple format for: mailing address, city, state, zip code
+- Add a note for an address - Simple content, user specific
+- Edit the fields for the address
+- Edit the conent of the note
+- Delete the address entirely
+- Delete spcific address note(s)
 
-### Coming Features!
+### Technology
 
 ---
 
--Search notes or addresses!
--Save to a condensed favorites list!
--Add notable features (the user will select from a list of features homeshoppers consider pros or cons) -`Homebl Tour` --- Google Maps API powered navigation
+- Hooks
+  - `react@latest` & `react-dom@latest`
+  - customHooks!
+  - all components are using state from custom hooks
+  - example ...
+
+  ```javascript
+      const useGetAddress = ({match}) => {
+      const [address, setAddress] = useState({})
+      const [addressError, setError] = useState(null)
+      const { addressId } = match.params
+      useEffect(() => {
+        let mounted = true
+        const getAddress = async () => {
+          try {
+            const response = await fetch(
+              `${.../address/${addressId}`,...)
+            const data = await response.json()
+            if (data.error) throw data.error
+
+            mounted && setAddress(data)
+          } catch (error) {
+            setError(error)
+          }
+        }
+        getAddress()
+        return () => (mounted = false)
+      }, [addressId])
+      return { address, addressError }
+    }
+
+- User Authentication
+  - fetching and storing `jwt` authorization token from the databse, which encrypts user passwords using `bcrypt`
+
+  ```javascript
+  function saveAuthToken(token) {
+    window.localStorage.setItem(token_key, token)
+  }
+
+- Conditional Rendering
+  - use state variables to render components
+  - user is redirected based on token truthiness
+
+  ```javascript
+  <Route
+    exact
+    path='/'
+    render={() =>
+      !isLogged ? (
+        <Redirect to={'/login'} />
+      ) : (
+        <Redirect to={'/address'} />
+      )
+    }
+  />
+
+- React Context Api
+
+  ```javascript
+    const LoggedInContext = createContext({
+    isLogged: false,
+    setIsLogged: () => {},
+    })
+
+### Coming Features
+
+---
+
+- Search notes or addresses!
+- Save to a condensed favorites list!
+- Add notable features (the user will select from a list of features homeshoppers consider pros or cons) - `Homebl Tour` --- Google Maps API powered navigation
