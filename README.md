@@ -50,9 +50,9 @@ This is a capstone for Thinkful's 'Software Engineering Immersion' program. This
 - Add an address - Simple format for: mailing address, city, state, zip code
 - Add a note for an address - Simple content, user specific
 - Edit the fields for the address
-- Edit the conent of the note
+- Edit the content of the note
 - Delete the address entirely
-- Delete spcific address note(s)
+- Delete spcific address's note(s)
 
 ### Technology
 
@@ -65,32 +65,32 @@ This is a capstone for Thinkful's 'Software Engineering Immersion' program. This
   - example ...
 
   ```javascript
-      const useGetAddress = ({match}) => {
-      const [address, setAddress] = useState({})
-      const [addressError, setError] = useState(null)
-      const { addressId } = match.params
-      useEffect(() => {
-        let mounted = true
-        const getAddress = async () => {
-          try {
-            const response = await fetch(
-              `${.../address/${addressId}`,...)
-            const data = await response.json()
-            if (data.error) throw data.error
+  const useGetAddress = ({match}) => {
+  const [address, setAddress] = useState({})
+  const [addressError, setError] = useState(null)
+  const { addressId } = match.params
+  useEffect(() => {
+    let mounted = true
+    const getAddress = async () => {
+      try {
+        const response = await fetch(
+          `${.../address/${addressId}`,...)
+        const data = await response.json()
+        if (data.error) throw data.error
 
-            mounted && setAddress(data)
-          } catch (error) {
-            setError(error)
-          }
-        }
-        getAddress()
-        return () => (mounted = false)
-      }, [addressId])
-      return { address, addressError }
+        mounted && setAddress(data)
+      } catch (error) {
+        setError(error)
+      }
     }
+    getAddress()
+    return () => (mounted = false)
+  }, [addressId])
+    return { address, addressError }
+  }
 
 - User Authentication
-  - fetching and storing `jwt` authorization token from the databse, which encrypts user passwords using `bcrypt`
+  - fetching and storing `jwt` authorization token from the database, which encrypts user passwords using `bcrypt`
 
   ```javascript
   function saveAuthToken(token) {
@@ -126,7 +126,7 @@ This is a capstone for Thinkful's 'Software Engineering Immersion' program. This
   - server supports `/GET /POST /DELETE /PATCH` HTTP requests
   - `bcrypt` password encryption and `jwt` for front-end verification
   - uses `CORS` (Cross-origin resource sharing) standards
-  - uses `Helmet` for protected HTTP request headers
+  - uses `helmet` for protected HTTP request headers
   - database migration with `postgrator-cli`
   - utilizes `morgan` as logger middleware
   - database queried using `knex` library
