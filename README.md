@@ -32,7 +32,7 @@ As a homebuyer, you search countless websites, like Zillow, Redfin, etc., only t
 
 ### Capstone
 
-This is a capstone for Thinkful's 'Software Engineering Immersion' program. This is also my FIRST solo full-stack application! The project was completed within a 10 day working day period, not including a week for planning (wireframing, brainstorming, kanban board prep, etc.), therefore the `MVP` version is limited to simple `CRUD` utilities and features a very simple UI. Thinkful's program does not cover basic or advanced use of React Hooks nor was there an emphasis on design. I loved using hooks, as it made state management much easier to compartmentalize. I also appreciate the flexibility and imagination they give a JavaScript developer. I have plans for expansion that is listed below under 'Coming Features'.
+This is a capstone for Thinkful's 'Software Engineering Immersion' program. This is also my FIRST solo full-stack application! The project was completed within a 10 day working day period, not including a week for planning (wireframing, brainstorming, kanban board prep, etc.), therefore the `MVP` version is limited to simple `CRUD` utilities and features a very simple UI. Thinkful's program does not cover basic or advanced use of React Hooks nor was there an emphasis on design. Through my own, I studied some basic examples of React Hooks and common practices and I really enjoyed my time learning, as it made state management much easier to compartmentalize. I also appreciate the flexibility and imagination they give a developer. I have plans for expansion that is listed below under 'Coming Features'.
 
 ---
 
