@@ -1,69 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Homebl - Home Shopping Notebook App
 
-## Available Scripts
+Simple create, read, update, and delete utility application for homeshoppers
 
-In the project directory, you can run:
-Run 'vercel --prod' to overwrite later
+## Live Application:
 
-### `npm start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### [Homebl](https://homebl-client.vercel.app/)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+--- Vercel App
 
-### `npm test`
+## The Problem
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+As a homebuyer, you search countless websites, like Zillow, Redfin, etc., only to mismanage and lose a list of your favorite homes. You want a place to store all your favorite homes that you lose in this process. You want to be able to save a simple note, with the address and other useful information. You want to be able to save this list to edit and delete as needed.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## The Solution
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`Homebl` is a very lightweight, simple solution for saving home addresses and notes in one central place. It will allow the user to save her favorite homes, update, and delete them in a personalized account.
 
-### `npm run eject`
+> A great solution for realtors adding value to their customers
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Summary
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`Homebl` is a react powered, mobile-friendly web application that uses a deployed PostgreSQL powered database, Node.js & Express powered server.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+### Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   Login and Register
+-   Logout persists user stored data
+-   Add an address - Simple format for: mailing address, city, state, zip code
+-   Add a note for an address - Simple content, user specific
+-   Edit the fields for the address
+-   Edit the conent of the note
+-   Delete the address entirely
+-   Delete spcific address note(s)
 
-### Code Splitting
+### Coming Features!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+---
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+-Search notes or addresses!
+-Save to a condensed favorites list!
+-Add notable features (the user will select from a list of features homeshoppers consider pros or cons) -`Homebl Tour` --- Google Maps API powered navigation
