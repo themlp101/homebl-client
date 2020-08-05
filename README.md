@@ -52,7 +52,7 @@ This is a capstone for Thinkful's 'Software Engineering Immersion' program. This
 - Edit the fields for the address
 - Edit the content of the note
 - Delete the address entirely
-- Delete spcific address's note(s)
+- Delete specific address's note(s)
 
 ### Technology
 
