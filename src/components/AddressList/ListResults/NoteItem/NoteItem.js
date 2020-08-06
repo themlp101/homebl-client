@@ -1,95 +1,30 @@
-import React, { useState } from 'react'
-import config from '../../../../config'
-import { useTokenService } from '../../../../services/token-services'
-import {
-	MdCancel,
-	MdDeleteForever,
-	MdCheckCircle,
-	MdEdit,
-} from 'react-icons/md'
+import React from 'react'
+import { MdEdit } from 'react-icons/md'
 import './NoteItem.css'
-
-const NoteItem = ({ content, id, history, address_id }) => {
-	const [isEditing, setIsEditing] = useState(false)
-	const handleClick = () => {
-		setIsEditing(!isEditing)
-	}
-	const handleEditNote = async (e) => {
-		e.preventDefault()
-		try {
-			const { content } = e.target
-			const newField = { content: content.value }
-
-			await fetch(`${config.API_ENDPOINT}/notes/${id}`, {
-				method: 'PATCH',
-				headers: {
-					'content-type': 'application/json',
-					authorization: `bearer ${useTokenService.getAuthToken()}`,
-				},
-				body: JSON.stringify(newField),
-			})
-			setIsEditing(false)
-			history.go()
-		} catch (error) {
-			console.error(error.message)
-		}
-	}
-	const handleDeleteNote = async () => {
-		try {
-			await fetch(`${config.API_ENDPOINT}/notes/${id}`, {
-				method: 'DELETE',
-				headers: {
-					'content-type': 'application/json',
-					authorization: `bearer ${useTokenService.getAuthToken()}`,
-				},
-			})
-			history.go()
-		} catch (error) {
-			console.error(error.message)
-		}
-	}
+import useEditNoteControls from '../../../../hooks/useEditNoteControls'
+import EditNoteForm from './EditNoteForm'
+/**
+ * This component renders the note item, or conditionally, the edit note form
+ * @param {string} content - used as defaultValue for textarea field, from the note
+ */
+const NoteItem = ({ content, id, history }) => {
+	const {
+		isEditing,
+		handleClick,
+		handleDeleteNote,
+		handleEditNote,
+	} = useEditNoteControls(id)
 
 	return (
 		<div className='note__container'>
 			{isEditing ? (
-				<form
-					data-testid='edit-note-form'
-					className='edit__note__form'
-					onSubmit={(e) => handleEditNote(e)}
-				>
-					<textarea
-						type='text'
-						name='content'
-						defaultValue={content}
-						className='edit__note__input'
-					/>
-
-					<div className='edit__btn__controls'>
-						<button
-							aria-label='Cancel Edit'
-							className='edit__button cancel__button'
-							type='button'
-							onClick={handleClick}
-						>
-							<MdCancel className='md__icon ' />
-						</button>
-						<button
-							aria-label='Delete'
-							type='button'
-							onClick={handleDeleteNote}
-							className='edit__button delete__button'
-						>
-							<MdDeleteForever className='md__icon ' />
-						</button>
-						<button
-							type='submit'
-							className='edit__button save__btn'
-							aria-label='Save'
-						>
-							<MdCheckCircle className='md__icon save__icon' />
-						</button>
-					</div>
-				</form>
+				<EditNoteForm
+					handleEditNote={handleEditNote}
+					content={content}
+					handleClick={handleClick}
+					history={history}
+					handleDeleteNote={handleDeleteNote}
+				/>
 			) : (
 				<>
 					<h3>{content}</h3>

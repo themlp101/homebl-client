@@ -1,14 +1,22 @@
 import { useState, useEffect } from 'react'
 import config from '../config'
 import { useTokenService } from '../services/token-services'
-
-const useGetNotes = (props) => {
+/**
+ * This is a custom hook that gets all the notes for the specific address
+ * and sets the appropriate corresponding error if any --
+ * adding mounted in state to test as a dependency in useEffect to avoid unnecessary renders
+ * or to force a re-render
+ *
+ * @param {object} match - get url params
+ * @param {boolean} isAddingNote - boolean expression representing user action
+ */
+const useGetNotes = (match, isAddingNote) => {
 	const [notes, setNotes] = useState([])
 	const [notesError, setNotesError] = useState(null)
-	const { addressId } = props.match.params
-
+	const { addressId } = match.params
+	const [mounted, setMounted] = useState(false)
 	useEffect(() => {
-		let mounted = true
+		setMounted(true)
 
 		const getNotes = async () => {
 			try {
@@ -31,12 +39,12 @@ const useGetNotes = (props) => {
 			}
 		}
 
-		getNotes()
+		mounted && getNotes()
 		return () => {
 			// cleanup
-			mounted = false
+			setMounted(false)
 		}
-	}, [addressId])
+	}, [addressId, isAddingNote, mounted])
 
 	return { notes, notesError }
 }

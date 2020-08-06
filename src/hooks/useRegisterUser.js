@@ -1,7 +1,17 @@
 import { useState } from 'react'
 import config from '../config'
 import { useTokenService } from '../services/token-services'
-
+/**
+ * This is a custom component that handles the registration utility
+ * Verifies password, if match continue, else display error
+ * POSTS new user to the server from controlled form
+ * Clears form
+ * GETS authToken from the server and saves to the browser
+ * Redirects to the address page
+ *
+ * @param {object} history - render prop
+ * @callback setIsLogged - updates the logged in context
+ */
 const useRegisterUser = ({ history, setIsLogged }) => {
 	const [user_name, setUsername] = useState('')
 	const [full_name, setFullName] = useState('')

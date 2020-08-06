@@ -1,7 +1,15 @@
 import { useState } from 'react'
 import config from '../config'
 import { useTokenService } from '../services/token-services'
-
+/**
+ * This is a custom compnent that handles the login utility
+ * Controls the login form
+ * Saves authToken to the browser
+ * Clears the form and redirects to address page
+ *
+ * @param {object} history - render prop
+ * @callback setIsLogged - from logged in context
+ */
 export const useLogin = ({ history, setIsLogged }) => {
 	const [user_name, setUsername] = useState('')
 	const [password, setPassword] = useState('')

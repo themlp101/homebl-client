@@ -9,7 +9,13 @@ import AddAddress from '../routes/Add/AddAddress'
 import Search from '../routes/Search/Search'
 import Tour from '../routes/Tour/Tour'
 import RegisterForm from '../LoginForm/RegisterForm'
-
+/**
+ * This is a container component for the main body section of the app
+ * All routes in the main body are directed here
+ * Consumes context from App
+ * '/' path redirects based on the logged in context
+ *
+ */
 const Main = () => {
 	const { isLogged, setIsLogged } = useContext(LoggedInContext)
 
@@ -44,13 +50,7 @@ const Main = () => {
 					<Route
 						exact
 						path='/add-address'
-						render={(props) => (
-							<AddAddress
-								{...props}
-								isLogged={isLogged}
-								setIsLogged={setIsLogged}
-							/>
-						)}
+						render={(props) => <AddAddress {...props} />}
 					/>
 					<Route
 						path={'/address'}

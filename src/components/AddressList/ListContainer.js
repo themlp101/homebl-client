@@ -4,7 +4,10 @@ import AddressList from './List/AddressList'
 import { Route, Switch } from 'react-router-dom'
 import ListResults from './ListResults/ListResults'
 import EditResults from './ListResults/EditResults/EditResults'
-
+/**
+ * This is a container component for the address list
+ * @param {object} props - render props, desstructured for easier access in children components
+ */
 export const ListContainer = (props) => {
 	return (
 		<div className='list__flexbox'>

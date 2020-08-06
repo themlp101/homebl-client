@@ -7,7 +7,12 @@ import {
 	MdEdit,
 } from 'react-icons/md'
 import './ListResultsControls.css'
-
+/**
+ * This component renders the list results controls UI
+ * handles the conditional rendering of the control container
+ * @param {object} history - render prop
+ * @param {string} addressId - from the url params
+ */
 export const ListResultsControls = ({ history, addressId }) => {
 	const {
 		willDelete,

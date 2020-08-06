@@ -2,9 +2,13 @@ import React from 'react'
 import { useGetAddresses } from '../../../hooks/useGetAddresses'
 import './AddressList.css'
 import AddressListItem from './AddressListItem'
-
-const AddressList = (props) => {
-	const { addresses, error } = useGetAddresses(props)
+/**
+ * Renders the list of address, if any.
+ *
+ * @param {object} location - render prop, passed to useGetAddresses to use in useEffect
+ */
+const AddressList = ({ location }) => {
+	const { addresses, error } = useGetAddresses(location)
 
 	return (
 		<ul className='house__list'>

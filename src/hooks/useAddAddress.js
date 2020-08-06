@@ -2,6 +2,19 @@ import { useState } from 'react'
 import config from '../config'
 import { useTokenService } from '../services/token-services'
 
+/**
+ * Custom hook that controls the AddNoteForm
+ * Controls form conditional display
+ * Submits new note
+ *
+ * @param {object} match - render prop, params from url
+ * @param {object} history - render prop, push
+ * @callback toggleIsAddingNote - sets !isAddingNote state
+ * @param {boolean} isAddingNote - default false, if true, display form
+ * @callback setAddError - sets error state
+ * @param {string} addError - error message from the api
+ *
+ */
 const useAddAddress = (history) => {
 	// on change store values in state
 	const [address_1, setAddress_1] = useState('')
@@ -33,8 +46,7 @@ const useAddAddress = (history) => {
 				}
 			)
 			const data = await response.json()
-			console.log(data)
-			history.push('/address')
+			history.push(`/address/${data.id}`)
 		} catch (error) {
 			setError(error.message)
 		}

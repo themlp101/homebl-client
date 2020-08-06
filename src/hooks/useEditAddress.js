@@ -2,7 +2,13 @@
 import { useState } from 'react'
 import config from '../config'
 import { useTokenService } from '../services/token-services'
-
+/**
+ * This is a  custom hook that handles the edit address utility
+ * @param {object} history - render prop
+ * @param {object} match - render prop
+ * @param {object} address - address object that comes from state in the useGetAddress hook
+ * {address_1, city, state, zip_code}
+ */
 const useEditAddress = (history, match, address) => {
 	// on change store values in state
 	const [address_1, updateAddress_1] = useState(address.address_1)

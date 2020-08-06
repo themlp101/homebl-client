@@ -1,5 +1,16 @@
 import React from 'react'
 import './EditAddress.css'
+
+/**
+ * This component renders content of the edit address form
+ *
+ * @param {object} address - {address_1, city, state, zip_code}
+ * @callback updateAddress_1 - function that updates address_1 in controlled form
+ * @param {string} error - error message
+ * @callback updateCity - updates city in controlled form
+ * @callback updateState - updates state in controlled form
+ * @callback updateZipCode - updates zip_code in controlled form
+ */
 const EditAddress = ({
 	address,
 	updateAddress_1,

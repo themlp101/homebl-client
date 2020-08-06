@@ -4,16 +4,20 @@ import useGetAddress from '../../../../hooks/useGetAddress'
 import EditAddress from './EditAddress'
 import { EditControls } from './EditControls'
 import useEditAddress from '../../../../hooks/useEditAddress'
-
-const EditResults = (props) => {
-	const { address, addressError } = useGetAddress(props)
+/**
+ *
+ * @param {object} history - render prop
+ * @param {match} match - render prop - passed to useGetAddress
+ */
+const EditResults = ({ history, match }) => {
+	const { address, addressError } = useGetAddress(match)
 	const {
 		updateAddress_1,
 		updateCity,
 		updateState,
 		updateZipCode,
 		handleSubmit,
-	} = useEditAddress(props.history, props.match, address)
+	} = useEditAddress(history, match, address)
 	return (
 		<div className='list__results__container'>
 			<form
@@ -21,8 +25,8 @@ const EditResults = (props) => {
 				onSubmit={(e) => handleSubmit(e)}
 			>
 				<EditControls
-					history={props.history}
-					addressId={props.match.params.addressId}
+					history={history}
+					addressId={match.params.addressId}
 					error={addressError}
 				/>
 				{addressError ? (

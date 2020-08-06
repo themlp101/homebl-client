@@ -2,11 +2,17 @@ import { useEffect, useState } from 'react'
 
 import { useTokenService } from '../services/token-services'
 import config from '../config'
-
-const useGetAddress = (props) => {
+/**
+ * This is acustom hook that gets the address from the api by matching params
+ * and catches an error, if any
+ * @param {object} match - get url params
+ *
+ */
+const useGetAddress = (match) => {
 	const [address, setAddress] = useState({})
 	const [addressError, setError] = useState(null)
-	const { addressId } = props.match.params
+	const { addressId } = match.params
+
 	useEffect(() => {
 		let mounted = true
 		const getAddress = async () => {

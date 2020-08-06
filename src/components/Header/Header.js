@@ -4,10 +4,13 @@ import { LoggedInContext } from '../context/LoggedInContext'
 import { Link } from 'react-router-dom'
 import { useTokenService } from '../../services/token-services'
 import { MdHome, MdAddCircle, MdAccountCircle } from 'react-icons/md'
+/**
+ * Renders the header
+ * Checks authToken and renders the correct list
+ */
 const Header = () => {
 	const { isLogged } = useContext(LoggedInContext)
 	useEffect(() => {
-		console.log('Logged in: ' + isLogged)
 		useTokenService.hasAuthToken()
 		return () => {}
 	}, [isLogged])

@@ -7,6 +7,12 @@ import {
 	MdCheckCircle,
 } from 'react-icons/md'
 import './EditControls.css'
+/**
+ *
+ * @param {object} history - render prop, passes down history.push() to use in useDeleteAddress
+ * @param {string} addressId - from match.params
+ * @callback handleSubmit - to use for controlled form
+ */
 export const EditControls = ({
 	history,
 	addressId,

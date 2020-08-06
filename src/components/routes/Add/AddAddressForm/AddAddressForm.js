@@ -1,6 +1,9 @@
 import React from 'react'
 import useAddAddress from '../../../../hooks/useAddAddress'
-
+/**
+ *
+ * @param {object} history - render prop
+ */
 const AddAddressForm = ({ history }) => {
 	const {
 		handleSubmit,

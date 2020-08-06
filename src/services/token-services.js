@@ -1,5 +1,8 @@
 import config from '../config'
-
+/**
+ * Authentication services for the jwt authentication procedure
+ * Saves authToken to the browser, checks if authToken exists, gets the authToken and clears the authToken
+ */
 export const useTokenService = {
 	saveAuthToken(token) {
 		window.localStorage.setItem(config.TOKEN_KEY, token)
@@ -12,8 +15,5 @@ export const useTokenService = {
 	},
 	clearAuthToken() {
 		window.localStorage.removeItem(config.TOKEN_KEY)
-	},
-	makeBasicAuthToken(userName, password) {
-		return window.btoa(`${userName}:${password}`)
 	},
 }

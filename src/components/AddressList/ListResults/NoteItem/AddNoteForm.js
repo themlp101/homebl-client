@@ -2,15 +2,31 @@ import React from 'react'
 import useAddNote from '../../../../hooks/useAddNote'
 import { MdCancel, MdCheckCircle } from 'react-icons/md'
 import './AddNoteForm.css'
-const AddNoteForm = (props) => {
-	const { handleSubmit, addError } = useAddNote(props)
+/**
+ * This component renders the AddNoteForm and displays errors if any
+ *
+ * @param {object} history - render prop
+ * @param {object} match  - render prop
+ * @param {boolean} isAddingNote - default 'false', based on user input
+ *
+ */
+const AddNoteForm = ({
+	history,
+	match,
+	toggleIsAddingNote,
+	isAddingNote,
+}) => {
+	const { handleSubmit, addError } = useAddNote({ match, history })
 
 	return (
 		<form
 			data-testid='add-note-form'
 			name='add__note__form'
 			className='add__note__form'
-			onSubmit={handleSubmit}
+			onSubmit={async (event) => {
+				await handleSubmit(event)
+				toggleIsAddingNote(false)
+			}}
 		>
 			{addError && <p style={{ color: 'red' }}>{addError}</p>}
 			<textarea
@@ -24,7 +40,7 @@ const AddNoteForm = (props) => {
 					className='save__note__btn'
 					aria-label='Cancel'
 					type='button'
-					onClick={() => props.toggleIsAddingNote(false)}
+					onClick={() => toggleIsAddingNote(!isAddingNote)}
 				>
 					<MdCancel className='add__note__icon' />
 				</button>

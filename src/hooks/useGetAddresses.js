@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react'
 import config from '../config'
 import { useTokenService } from '../services/token-services'
-
-export const useGetAddresses = (props) => {
+/**
+ * This is custom component that gets the address from the api
+ * @param {object} location - render prop, if changes, then the useEffect hook will re-render
+ * '/address/:addressId'
+ */
+export const useGetAddresses = (location) => {
 	const [addresses, setAddresses] = useState([])
 	const [error, setError] = useState(null)
 
@@ -32,7 +36,7 @@ export const useGetAddresses = (props) => {
 
 		getAddresses()
 		return () => (mounted = false)
-	}, [props.location])
+	}, [location])
 
 	return { addresses, error }
 }

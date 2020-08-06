@@ -1,5 +1,9 @@
 import React from 'react'
-
+/**
+ * This component renders the note text area for editing
+ * @param {array} notes - an array of objects representing notes {content: 'string', id: number}
+ * @param {string} notesError - error message from api
+ */
 const EditNotes = ({ notes, notesError }) => {
 	return (
 		<>
