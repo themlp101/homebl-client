@@ -12,9 +12,9 @@ const Demo = ({ history }) => {
 				<div>
 					<h3>Instructions:</h3>
 					<p>
-						At the bottom of the page is button that will
-						take you to the login screen. From there you
-						will be prompted to either login as an
+						At the bottom of the page is a button that
+						will take you to the login screen. From there
+						you will be prompted to either login as an
 						existing user, or register as a new user.
 					</p>
 					<h4>Use existing username:</h4>
