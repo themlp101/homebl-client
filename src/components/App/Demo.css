@@ -1,0 +1,30 @@
+.demo__btn {
+  align-self: flex-end;
+  border: none;
+  background-color:#fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: hsl(230, 100%, 30%);
+  font-weight: 600;
+}
+.demo__btn:hover{
+  background-color: hsl(230, 100%, 30%);
+  color:#fff;
+}
+.demo__container {
+  margin:1em 2em;
+  padding: 1em 2em;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.demo__header {
+  padding:0.5rem 2rem;
+  background-color: hsl(230, 100%, 90%);
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),0 3px 6px rgba(0, 0, 0, 0.23);
+}
