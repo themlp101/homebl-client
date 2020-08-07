@@ -6,7 +6,7 @@ Simple create, read, update, and delete utility application for homeshoppers
 
 ---
 
-### [Homebl](https://homebl-client.vercel.app/)
+### [Homebl](https://homebl.vercel.app/)
 
 --- Vercel App
 
