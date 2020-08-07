@@ -14,7 +14,7 @@ Simple create, read, update, and delete utility application for homeshoppers
 
 ---
 
-As a homebuyer, you search countless websites, like Zillow, Redfin, etc., only to mismanage and lose a list of your favorite homes. You want a place to store all your favorite homes that you lose in this process. You want to be able to save a simple note, with the address and other useful information. You want to be able to save this list to edit and delete as needed.
+As a homebuyer, you search a bizzilion websites, like Zillow, Redfin, etc., finding your favorite homes, only to mismanage and lose the list. You want a place to store all your favorite homes that you lose during the countless hours you spend browsing the real estate web. You want to be able to save a simple note, with the address and other useful information. You want to be able to save these homes as a list for future use, to edit and delete as needed.
 
 ## The Solution
 
@@ -32,7 +32,7 @@ As a homebuyer, you search countless websites, like Zillow, Redfin, etc., only t
 
 ### Capstone
 
-This is a capstone for Thinkful's 'Software Engineering Immersion' program. This is also my FIRST solo full-stack application! The project was completed within a 10 day working day period, not including a week for planning (wireframing, brainstorming, kanban board prep, etc.), therefore the `MVP` version is limited to simple `CRUD` utilities and features a very simple UI. Thinkful's program does not cover basic or advanced use of React Hooks nor was there an emphasis on design. Through my own, I studied some basic examples of React Hooks and common practices and I really enjoyed my time learning, as it made state management much easier to compartmentalize. I also appreciate the flexibility and imagination they give a developer. I have plans for expansion that is listed below under 'Coming Features'.
+This is a capstone for Thinkful's 'Software Engineering Immersion' program. This is also my FIRST solo full-stack application! The project was completed within a 10 day working day period, not including a week for planning (wireframing, brainstorming, kanban board prep, etc.), therefore the `MVP` version is limited to simple `CRUD` utilities and features a very simple UI. Thinkful's program does not cover basic or advanced use of React Hooks nor was there an emphasis on design. Through my own, I studied some basic examples of React Hooks and common practices and I really enjoyed my time learning, as it made state management much easier to compartmentalize. I also appreciate the flexibility and imagination they give a developer. I have plans for expansion that are listed below under 'Coming Features'.
 
 ---
 
@@ -52,7 +52,7 @@ This is a capstone for Thinkful's 'Software Engineering Immersion' program. This
 - Edit the fields for the address
 - Edit the content of the note
 - Delete the address entirely
-- Delete spcific address's note(s)
+- Delete a specific address's note(s)
 
 ### Technology
 

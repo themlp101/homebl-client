@@ -79,9 +79,9 @@ const Demo = ({ history }) => {
 						button at the bottom of the container. If the
 						user wishes to edit the note, she can click on
 						the edit button, which is on every note.
-						Clicking the edit button will display note in
-						a editable field. The user can then cancel the
-						action, delete the note, or submit changes
+						Clicking the edit button will display the note
+						in a editable field. The user can then cancel
+						the action, delete the note, or submit changes
 						using a note control bar.
 					</p>
 				</div>
