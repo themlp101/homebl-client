@@ -30,4 +30,10 @@
 		flex: 1;
 		margin: 1rem;
 	}
+	.list__results__container {
+		order:0;
+	}
+	.list__container{
+		order:2;
+	}
 }
