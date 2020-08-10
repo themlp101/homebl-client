@@ -365,6 +365,30 @@ Returns json data about addresses in the database.
     - `/POST`
       - Code: `400 Bad Request`
       - Content : `{ error: 'Content is required'}`
+  - Example:
+
+  ```javascript
+  // PATCH
+    await fetch(`${config.API_ENDPOINT}/notes/1`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `bearer token`,
+      },
+      body: JSON.stringify(newField),
+    })
+  ```
+
+  ```javascript
+  // DELETE
+    await fetch(`${config.API_ENDPOINT}/notes/1`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `bearer token`,
+      },
+    })
+  ```
 
 - URL
   - `/auth/login`
@@ -378,16 +402,17 @@ Returns json data about addresses in the database.
     - Code: `201`
     - Content: `{ authToken: [jwt token] }`
   - Error Response:
-    - Code: `400`
+    - Code: `400 Bad Request`
     - Content: `{error: 'Missing "username or password" in request body' }`
 
     OR
 
-    - Code: `400`
+    - Code: `400 Bad Request`
     - Content: `{error: 'Incorrect username or password' }`
   - Example:
 
   ```javascript
+    // POST
     const res = await fetch(
       `${config.API_ENDPOINT}/auth/login`,
       {
@@ -438,6 +463,7 @@ Returns json data about addresses in the database.
   - Example:
 
   ```javascript
+  // POST
     const response = await fetch(
       `${config.API_ENDPOINT}/users`,
       {
@@ -450,7 +476,7 @@ Returns json data about addresses in the database.
     )
     const user = await response.json()
   ```
-  
+
 ### Coming Features
 
 ---
