@@ -28,3 +28,17 @@
   text-align: center;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),0 3px 6px rgba(0, 0, 0, 0.23);
 }
+
+@media screen and (max-width: 400px) {
+.demo__container {
+  margin:0;
+  padding: 0.5em 1em; 
+}
+
+.demo__header {
+  padding:0;
+  background-color: hsl(230, 100%, 90%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+}
