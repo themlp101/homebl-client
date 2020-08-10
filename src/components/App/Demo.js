@@ -10,32 +10,6 @@ const Demo = ({ history }) => {
 
 			<div>
 				<div>
-					<h3>Instructions:</h3>
-					<p>
-						At the bottom of the page is a button that
-						will take you to the login screen. From there
-						you will be prompted to either login as an
-						existing user, or register as a new user.
-					</p>
-					<h4>Use existing username:</h4>
-					<ul>
-						<li>Username: matty</li>
-						<li>Password: password1234</li>
-					</ul>
-					<h4>To register, use following format:</h4>
-					<ul>
-						<li>Full Name: no constraints</li>
-						<li>
-							Username: can be any unique character
-							combination, not blank
-						</li>
-						<li>
-							Password: at least 5 characters, no
-							special characters needed
-						</li>
-					</ul>
-				</div>
-				<div>
 					<h3>Use:</h3>
 					<p>
 						Using the app is simple! Once you login you
@@ -85,11 +59,37 @@ const Demo = ({ history }) => {
 						using a note control bar.
 					</p>
 				</div>
+				<div>
+					<h3>Instructions:</h3>
+					<p>
+						At the bottom of the page is a button that
+						will take you to the login screen. From there
+						you will be prompted to either login as an
+						existing user, or register as a new user.
+					</p>
+					<h4>DEMO USER:</h4>
+					<ul>
+						<li>Username: matty</li>
+						<li>Password: password1234</li>
+					</ul>
+					<h4>To register, use following format:</h4>
+					<ul>
+						<li>Full Name: no constraints</li>
+						<li>
+							Username: can be any unique character
+							combination, not blank
+						</li>
+						<li>
+							Password: at least 5 characters, no
+							special characters needed
+						</li>
+					</ul>
+				</div>
 			</div>
 			<button
 				className='demo__btn'
 				type='button'
-				onClick={() => history.push('/')}
+				onClick={() => history.push('/login')}
 			>
 				GO
 			</button>

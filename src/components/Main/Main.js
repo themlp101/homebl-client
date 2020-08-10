@@ -32,7 +32,7 @@ const Main = () => {
 						path='/'
 						render={() =>
 							!isLogged ? (
-								<Redirect to={'/login'} />
+								<Redirect to={'/demo'} />
 							) : (
 								<Redirect to={'/address'} />
 							)
