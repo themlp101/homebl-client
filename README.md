@@ -132,6 +132,325 @@ This is a capstone for Thinkful's 'Software Engineering Immersion' program. This
   - database queried using `knex` library
   - deployed using `heroku`
 
+### Server Information
+
+#### Address Routes
+
+---
+Returns json data about addresses in the database.
+
+  ```javascript
+      // 200 'ok' response
+      const addresses = [{
+        address_1,
+        address_2,
+        address_3,
+        city,
+        state,
+        zip_code
+      }, ...]
+  ```
+
+- URL
+  - `/address`
+  - Methods:
+    - `/GET`
+    - `/POST`
+  - URL Params:
+    - None
+  - Data Params:
+    - `/POST`
+      - Request Body: `address [object]`
+      - Required Fields: `address_1`, `city`, `state`, and `zip_code`
+  - Success Response:
+    - `/GET`
+      - Code: `200`
+    - `/POST`
+      - Code: `201 Created`
+  - Error Response:
+    - `/GET`
+      - Code: `401 Unauthorized`
+      - Content: `{ error: 'Unauthorized request' }`
+    - `/POST`
+      - Code: `400 Bad Request`
+      - Content : `{ error: 'Missing [key] in request body'}`
+
+  - Example:
+  
+  ```javascript
+  // GET
+    const response = await fetch(
+      `${config.API_ENDPOINT}/address`,
+      {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `bearer token`,
+        },
+      }
+      )
+    const data = await response.json()
+  ```
+
+  ```javascript
+  // POST
+    const response = await fetch(
+      `${config.API_ENDPOINT}/address`,
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `bearer token`,
+        },
+        body: JSON.stringify(newAddress),
+      }
+    )
+    const data = await response.json()
+  ```
+  
+- URL
+  - `/address/:address_id`
+  - Methods:
+    - `/GET`
+    - `/POST`
+    - `DELETE`
+    - `/PATCH`
+  - URL Params
+    - `address_id = [integer]`
+  - Data Params
+    - `/PATCH`
+      - `newFields = [object]`
+      - `address_1 = [string]`
+      - `city = [sting]`
+      - `state = [string]`
+      - `zip_code = [integer]`
+  - Success Response
+    - `/GET`
+      - Code: `200`
+      - Content: `{ address: address_1:'123 Main St', address_2: null, address_3: null, city: 'Denver', state: 'CO', zip_code: 80014 }`
+    - `/DELETE`
+      - Code: `204 No Content`
+    - `/PATCH`
+      - Code: `204 No Content`
+  - Error Response
+    - `/GET`, `/DELETE`, `/PATCH`
+      - Code: `404 Not Found`
+      - Content: `{ error: 'Address with id:${address_id} not found' }`
+  - Example:
+
+  ```javascript
+    // GET
+    const response = await fetch(
+      `${config.API_ENDPOINT}/address/1`,
+      {
+        headers: {
+          authorization: `bearer token`,
+        },
+      }
+    )
+    const data = await response.json()
+  ```
+
+  ```javascript
+  // DELETE
+    await fetch(
+      `${config.API_ENDPOINT}/address/1`,
+      {
+        method: 'DELETE',
+        headers: {
+          authorization: `bearer token`,
+        },
+      }
+    )
+  ```
+
+  ```javascript
+  // PATCH
+    await fetch(
+      `${config.API_ENDPOINT}/address/1`,
+      {
+        method: 'PATCH',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `bearer token`,
+        },
+        body: JSON.stringify(newFields),
+      }
+    )
+  ```
+
+- URL
+  - `/address/:address_id/notes`
+  -Methods:
+    - `/GET`
+    - `/POST`
+  - URL Params:
+    - `address_id = [integer]`
+  - Data Params:
+    - `/POST`
+      - Request Body: `note [object]`
+      - Required Fields: `content`
+  - Success Response:
+    - `/GET`
+      - Code: `200`
+    - `/POST`
+      - Code: `201 Created`
+  - Error Response:
+    - `/GET`
+      - Code: `401 Unauthorized`
+      - Content: `{ error: 'Unauthorized request' }`
+    - `/POST`
+      - Code: `400 Bad Request`
+      - Content : `{ error: 'Content is required'}`
+  - Example:
+
+  ```javascript
+  // GET
+    const response = await fetch(
+      `${config.API_ENDPOINT}/address/1/notes`,
+      {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `bearer token`,
+        },
+      }
+    )
+    const data = await response.json()
+  ```
+
+  ```javascript
+    const response = await fetch(
+      `${config.API_ENDPOINT}/address/1/notes`,
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `bearer token`,
+        },
+        body: JSON.stringify(newNote),
+      }
+    )
+    const data = await response.json()
+  ```
+
+- URL
+  - `/notes/:note_id`
+  -Methods:
+    - `/GET`
+    - `/DELETE`
+    - `/PATCH`
+  - URL Params:
+    - `note_id = [integer]`
+  - Data Params:
+    - `/PATCH`
+      - Request Body: `note [object]`
+      - Required Fields: `content`
+  - Success Response:
+    - `/GET`
+      - Code: `200`
+    - `/DELETE`
+      - Code: `204 No Content`
+    - `/PATCH`
+      - Code: `204 No Content`
+  - Error Response:
+    - `/GET`. `/DELTE`, `/PATCH`
+      - Code: `401 Unauthorized`
+      - Content: `{ error: 'Unauthorized request' }`
+
+      OR
+
+      - Code: `404 Not Found`
+      - Content: `{ error: 'Note with id:9909 not found' }`
+    - `/POST`
+      - Code: `400 Bad Request`
+      - Content : `{ error: 'Content is required'}`
+
+- URL
+  - `/auth/login`
+  - Methods:
+    - `/POST`
+  - URL Params:
+    - None
+  - Data Params:
+    - Required: `user_name = [string]` `password = [string]`
+  - Success Response:
+    - Code: `201`
+    - Content: `{ authToken: [jwt token] }`
+  - Error Response:
+    - Code: `400`
+    - Content: `{error: 'Missing "username or password" in request body' }`
+
+    OR
+
+    - Code: `400`
+    - Content: `{error: 'Incorrect username or password' }`
+  - Example:
+
+  ```javascript
+    const res = await fetch(
+      `${config.API_ENDPOINT}/auth/login`,
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({ user_name, password }),
+      }
+    )
+    const data = await res.json()
+  ```
+
+- URL
+  - `/users`
+  - Methods:
+    - `/POST`
+  - URL Params:
+    - None
+  - Data Params:
+    - Required: `user_name = [string]` `password = [string]` `full_name = [string]`
+  - Success Response:
+    - Code: `201`
+    - Content: `{ full_name: 'User Full_name', user_name: 'User , user_name, logged_in: Tue Mar 24 2015 20:00:00 GMT-0400 }`
+  - Error Response:
+    - Code: `400 Bad Request`
+    - Content: `{error: 'Missing "username or password" in request body' }`
+
+    OR
+
+    - Code: `400 Bad Request`
+    - Content: `{error: 'Password must be longer than 5 characters' }`
+
+    OR
+
+    - Code: `400 Bad Request`
+    - Content: `{error: 'Password must be less than 72 characters' }`
+
+    OR
+
+    - Code: `400 Bad Request`
+    - Content: `{error: 'Password must not begin or end with a blank space' }`
+
+    OR
+
+    - Code: `400 Bad Request`
+    - Content: `{ error: 'Username already taken' }`
+  - Example:
+
+  ```javascript
+    const response = await fetch(
+      `${config.API_ENDPOINT}/users`,
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(newUser),
+      }
+    )
+    const user = await response.json()
+  ```
+  
 ### Coming Features
 
 ---
