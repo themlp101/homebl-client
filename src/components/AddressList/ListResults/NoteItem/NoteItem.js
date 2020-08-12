@@ -29,7 +29,7 @@ const NoteItem = ({ content, id, history }) => {
 				<>
 					<h3>{content}</h3>
 					<button
-						className='edit__button edit__btn'
+						className='edit__btn'
 						onClick={handleClick}
 						aria-label='Edit'
 					>

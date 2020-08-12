@@ -23,7 +23,10 @@ const EditNoteForm = ({
 		<form
 			data-testid='edit-note-form'
 			className='edit__note__form'
-			onSubmit={(e) => handleEditNote(e)}
+			onSubmit={async (e) => {
+				await handleEditNote(e)
+				history.go()
+			}}
 		>
 			<textarea
 				type='text'

@@ -27,6 +27,7 @@ const useEditNoteControls = (id) => {
 				},
 				body: JSON.stringify(newField),
 			})
+			setIsEditing(false)
 		} catch (error) {
 			console.error(error.message)
 		}
@@ -40,6 +41,7 @@ const useEditNoteControls = (id) => {
 					authorization: `bearer ${useTokenService.getAuthToken()}`,
 				},
 			})
+			setIsEditing(false)
 		} catch (error) {
 			console.error(error.message)
 		}
